@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {/* Navigation Menus */}
         <div className="hidden items-center gap-6 xl:gap-8 lg:flex">
-          <Link href="#" className="text-sm font-medium text-foreground hover:opacity-70">
+          <Link href="/" className="text-sm font-medium text-foreground hover:opacity-70">
             Home
           </Link>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
           </div>
 
 
-          <Link href="#" className="text-sm font-medium text-foreground hover:opacity-70">
+          <Link href="/#roadmap" className="text-sm font-medium text-foreground hover:opacity-70">
             Roadmap
           </Link>
 
@@ -100,7 +100,7 @@ const Navbar = () => {
           </Link>
 
           <div className="group relative cursor-pointer">
-            <Link href="/support">
+            <Link href="/pages/support">
               <span className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
                 Support
               </span>
@@ -108,11 +108,11 @@ const Navbar = () => {
             {/* Dropdown */}
             <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
               <div className="min-w-[150px] overflow-hidden border border-nav-border bg-nav-bg p-2 shadow-xl">
-                <Link href="/support#faq">
+                <Link href="/pages/support#faq">
                   <div className="px-4 py-2 text-sm hover:bg-nav-border/20">FAQ</div></Link>
-                <Link href="/support#ticket">
+                <Link href="/pages/support#ticket">
                   <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Ticket</div></Link>
-                <Link href="/support#contact">
+                <Link href="/pages/support#contact">
                   <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Contact us</div></Link>
 
               </div>
@@ -167,7 +167,7 @@ const Navbar = () => {
             <nav className="flex flex-col gap-6 text-center overflow-y-auto">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Home</Link>
               <Link href="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Products</Link>
-              <Link href="/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#14F195]">Support</Link>
+              <Link href="/pages/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#14F195]">Support</Link>
               <Link href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Roadmap</Link>
               
               <ConnectWallet />
