@@ -3,6 +3,9 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import { ConnectWallet } from '@/app/contexts/ConnectWallet'; 
+
+
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -134,13 +137,7 @@ const Navbar = () => {
 
         {/* Connect Wallet Button */}
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            className="bg-[#14F195] text-background rounded-full px-4 py-2 text-xs sm:text-sm font-bold transition-all hover:opacity-90 active:scale-95 shadow-lg shadow-[#14F195]/20"
-          >
-            <span className="hidden xs:inline">Connect Wallet</span>
-            <span className="xs:hidden">Connect</span>
-          </button>
+          <ConnectWallet />
           {/* Hamburger Mobile */}
           <button
             className="lg:hidden p-2 text-foreground hover:bg-nav-border/50 rounded-lg transition-colors"
@@ -148,6 +145,8 @@ const Navbar = () => {
           >
             <Menu size={24} />
           </button>
+          
+          
         </div>
 
 
@@ -171,11 +170,7 @@ const Navbar = () => {
               <Link href="/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#14F195]">Support</Link>
               <Link href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Roadmap</Link>
               
-              <div className="mt-6 border-t border-nav-border pt-6">
-                <button className="w-full py-4 bg-[#14F195] text-background rounded-2xl font-bold text-xl">
-                   Connect Wallet
-                </button>
-              </div>
+              <ConnectWallet />
               
             </nav>
           </div>
