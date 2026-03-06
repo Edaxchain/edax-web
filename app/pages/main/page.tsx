@@ -5,7 +5,7 @@ import Roadmap from '@/app/pages/main/Roadmap'
 export default function LandingPage() {
   return (
    
-   <main className="flex min-h-screen flex-col">
+   <main className="flex min-h-screen flex-col py-12">
       <Hero />
       
       {/* วาง Roadmap ต่อจาก Hero ได้เลย */}
