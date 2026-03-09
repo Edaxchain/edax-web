@@ -4,6 +4,7 @@ import Roadmap from "@/app/pages/main/Roadmap";
 import Statistics from "@/app/pages/main/Statistics";
 import Performance from "@/app/pages/main/Performance";
 import Transaction from "@/app/pages/main/Transaction";
+import Blockchain from "@/app/pages/main/Blockchain";
 
 export default function LandingPage() {
     return (
@@ -13,6 +14,7 @@ export default function LandingPage() {
             <Statistics />
             <Performance />
             <Transaction />
+            <Blockchain />
         </main>
     );
 }
