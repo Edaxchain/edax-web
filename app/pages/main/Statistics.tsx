@@ -1,6 +1,3 @@
-import React from "react";
-
-// 1. Declare the sub-component here (Local only)
 const StatItem = ({ value, label }: { value: string; label: string }) => (
     <div className="text-center">
         <h2 className="text-6xl text-[#14F195] font-black tracking-tighter uppercase mb-4 drop-shadow-[0_0_15px_rgba(20,241,149,0.3)]">
@@ -21,7 +18,7 @@ const Statistics = () => {
     return (
         <section
             id="statistics"
-            className="bg-background overflow-hidden border-t border-nav-border"
+            className="py-15 bg-background overflow-hidden border-t border-nav-border"
         >
             <div className="container mx-auto px-10 lg:px-40 mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-20">
                 {stats.map((stat, index) => (
