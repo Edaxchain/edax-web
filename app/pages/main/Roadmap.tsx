@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, useTransform, useAnimationFrame, useMotionValue, } from 'framer-motion';
 
 const Roadmap = () => {
