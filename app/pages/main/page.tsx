@@ -1,7 +1,9 @@
 import React from "react";
 import Hero from "@/app/pages/main/Hero";
 import Roadmap from "@/app/pages/main/Roadmap";
-import Statistics from "@/app/pages/main/statistics";
+import Statistics from "@/app/pages/main/Statistics";
+import Performance from "@/app/pages/main/Performance";
+import Transaction from "@/app/pages/main/Transaction";
 
 export default function LandingPage() {
     return (
@@ -9,6 +11,8 @@ export default function LandingPage() {
             <Hero />
             <Roadmap />
             <Statistics />
+            <Performance />
+            <Transaction />
         </main>
     );
 }
