@@ -1,10 +1,10 @@
-import React from "react";
 import Hero from "@/app/pages/main/Hero";
 import Roadmap from "@/app/pages/main/Roadmap";
 import Statistics from "@/app/pages/main/Statistics";
 import Performance from "@/app/pages/main/Performance";
 import Transaction from "@/app/pages/main/Transaction";
 import Blockchain from "@/app/pages/main/Blockchain";
+import Works from "@/app/pages/main/Works";
 
 export default function LandingPage() {
     return (
@@ -15,6 +15,7 @@ export default function LandingPage() {
             <Performance />
             <Transaction />
             <Blockchain />
+            <Works />
         </main>
     );
 }
