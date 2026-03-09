@@ -23,7 +23,7 @@ const Statistics = () => {
             id="statistics"
             className="bg-background overflow-hidden border-t border-nav-border"
         >
-            <div className="container mx-auto px-auto mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-20">
+            <div className="container mx-auto px-10 lg:px-40 mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-20">
                 {stats.map((stat, index) => (
                     <StatItem
                         key={index}
