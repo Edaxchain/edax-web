@@ -7,17 +7,17 @@ const Transaction = () => {
             id="transaction"
             className="py-15 bg-background border-t border-nav-border"
         >
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12 px-20 sm:px-0">
-                    <div className="w-full sm:w-2/3">
+            <div className="container mx-auto px-10 lg:px-30">
+                <div className="flex flex-col md:flex-row items-center gap-x-20 gap-y-10 px-20 sm:px-0">
+                    <div className="w-full sm:w-2/3 lg:w-1/3">
                         <Image
                             src={TransactionImg}
                             alt="Transaction Path"
                             className="w-full h-auto"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 order-2 md:order-1">
-                        <h1 className="text-4xl text-right md:text-6xl font-black tracking-tighter uppercase mb-6 leading-tight">
+                    <div className="w-full md:w-1/2 grow">
+                        <h1 className="text-5xl text-right lg:text-6xl font-black tracking-tighter uppercase mb-6 leading-tight">
                             เส้นทางของธุรกรรม
                         </h1>
                         <p className="text-gray-400 text-left text-lg leading-relaxed">

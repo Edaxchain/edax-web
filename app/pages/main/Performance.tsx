@@ -4,16 +4,16 @@ const Performance = () => {
             id="performance"
             className="py-15 bg-background overflow-hidden border-t border-nav-border"
         >
-            <div className="text-center px-20">
+            <div className="text-center px-20 lg:px-50">
                 <h1 className="text-5xl font-black tracking-tighter uppercase mb-4">
                     EDAX รวดเร็วและเป็นกลาง
                 </h1>
-                <p className="mb-6">
+                <p className="mb-6 text-lg">
                     EDAX ให้ประสบการณ์
                     “เร็วแบบรู้สึกได้”—กดส่งแล้วได้การตอบรับจาก Espresso
                     ภายในเสี้ยววินาที (เป้าหมาย p95 &lt; 1s)
                 </p>
-                <p className="text-left">
+                <p className="text-left text-lg">
                     การจัดลำดับธุรกรรมก็โปร่งใสเพราะใช้ shared sequencer
                     แบบเป็นกลาง ลดโอกาสการสลับลำดับเพื่อเอาเปรียบ
                     และยังเพิ่มความออดิทได้ของ “เวลา/ลำดับ” ด้วยการอ้างอิง PoH
