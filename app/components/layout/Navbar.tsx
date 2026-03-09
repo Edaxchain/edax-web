@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { ConnectWallet } from '@/app/contexts/ConnectWallet'; 
@@ -28,14 +28,19 @@ const Navbar = () => {
           </Link>
 
           <div className="group relative cursor-pointer">
+          <Link href="/#blockchain" className="text-sm font-medium text-foreground hover:opacity-70">
             <span className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
               Products
             </span>
+            </Link>
             {/* Dropdown */}
             <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
               <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Product 1</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Product 2</div>
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart City</div>
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Energy</div>
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Health</div>
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Education</div>
+
               </div>
             </div>
           </div>
