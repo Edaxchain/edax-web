@@ -48,15 +48,15 @@ const Roadmap = () => {
                     onMouseLeave={() => setIsPaused(false)}
                 >
                     {duplicatedPhases.map((item, index) => (
-                        <div key={index} className="w-[300px] md:w-[400px] flex-shrink-0 flex">
+                        <div key={index} className="w-[300px] md:w-[400px] shrink-0 flex">
                             {/* Outer Card */}
                             <div className={`
-                group relative w-full rounded-[2rem] p-[1px] transition-all duration-500
+                group relative w-full rounded-4xl p-px transition-all duration-500
                 ${item.status === 'In Progress' ? 'bg-[#14F195]/50 shadow-[0_0_20px_rgba(20,241,149,0.1)]' : 'bg-nav-border/50'}
                 hover:bg-[#14F195] hover:shadow-[0_0_30px_rgba(20,241,149,0.4)] hover:-translate-y-2
               `}>
                                 {/* Inner Content: ตัวเนื้องาน Glassmorphism */}
-                                <div className="bg-[#0A0A0A] h-full w-full rounded-[2rem] p-8 md:p-10 flex flex-col relative z-10 overflow-hidden">
+                                <div className="bg-[#0A0A0A] h-full w-full rounded-4xl p-8 md:p-10 flex flex-col relative z-10 overflow-hidden">
 
                                     {/* Phase Number */}
                                     <span className="absolute -top-4 -right-2 text-8xl font-black italic opacity-[0.02] group-hover:opacity-[0.07] transition-opacity pointer-events-none select-none">
@@ -80,17 +80,17 @@ const Roadmap = () => {
                                     </div>
 
                                     {/* List Items */}
-                                    <ul className="space-y-4 flex-grow">
+                                    <ul className="space-y-4 grow">
                                         {item.items.map((point, i) => (
                                             <li key={i} className="flex items-start gap-3 text-sm text-white/60 group-hover:text-white/90 transition-colors">
-                                                <div className="mt-2 w-1.5 h-1.5 rounded-full bg-[#14F195] flex-shrink-0 shadow-[0_0_5px_#14F195]" />
+                                                <div className="mt-2 w-1.5 h-1.5 rounded-full bg-[#14F195] shrink-0 shadow-[0_0_5px_#14F195]" />
                                                 <span>{point}</span>
                                             </li>
                                         ))}
                                     </ul>
 
                                     {/* Decorative Footer Line */}
-                                    <div className="mt-8 h-[1px] w-full bg-gradient-to-r from-[#14F195]/0 via-[#14F195]/40 to-[#14F195]/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                                    <div className="mt-8 h-px w-full bg-gradient-to-r from-[#14F195]/0 via-[#14F195]/40 to-[#14F195]/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                                 </div>
                             </div>
                         </div>
