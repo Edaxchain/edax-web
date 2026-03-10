@@ -1,10 +1,14 @@
 import Image from "next/image";
 import AppstoreImg from "@/app/assets/mobile/appstore.png";
 import PlaystoreImg from "@/app/assets/mobile/playstore.png";
+import App from "@/app/assets/app.png";
 
 const Mobile = () => {
     return (
-        <section id="mobile" className="py-15 lg:py-40 bg-background overflow-hidden">
+        <section
+            id="mobile"
+            className="py-15 lg:py-40 bg-background overflow-hidden"
+        >
             <div className="px-6 md:px-20 lg:px-50 pt-[45vw] md:pt-[30vw] lg:pt-0">
                 {/* Main Card Container */}
                 <div className="relative rounded-[2.5rem] border border-white/10 grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-12 items-center p-8 lg:p-16">
@@ -31,7 +35,7 @@ const Mobile = () => {
                                     Preview Mode
                                 </span>
                             </div>
-                            {/* <Image src={PhoneImg} fill className="object-cover" /> */}
+                            <Image src={App} alt="app" fill className="object-cover" />
                         </div>
                     </div>
 
