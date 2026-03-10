@@ -48,9 +48,9 @@ const Blockchain = () => {
     return (
         <section
             id="blockchain"
-            className="py-15 bg-background overflow-hidden border-t border-nav-border"
+            className="py-15 bg-background overflow-hidden"
         >
-            <div className="container mx-auto px-10">
+            <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
                         One Blockchain. Multiple Smart Solutions.
@@ -60,7 +60,7 @@ const Blockchain = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-15 md:px-0 gap-15 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-5 md:px-0 gap-15 mb-16">
                     {cards.map((card, index) => (
                         <Card
                             key={index}

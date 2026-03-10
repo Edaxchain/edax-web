@@ -5,6 +5,7 @@ import Performance from "@/app/pages/main/Performance";
 import Transaction from "@/app/pages/main/Transaction";
 import Blockchain from "@/app/pages/main/Blockchain";
 import Works from "@/app/pages/main/Works";
+import Mobile from "@/app/pages/main/Mobile";
 
 export default function LandingPage() {
     return (
@@ -16,6 +17,7 @@ export default function LandingPage() {
             <Transaction />
             <Blockchain />
             <Works />
+            <Mobile />
         </main>
     );
 }

@@ -63,7 +63,7 @@ const Roadmap = () => {
     return (
         <section
             id="roadmap"
-            className="py-24 bg-background overflow-hidden border-t border-nav-border"
+            className="py-24 bg-background overflow-hidden"
         >
             <div className="container mx-auto px-6 mb-12 text-center">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">

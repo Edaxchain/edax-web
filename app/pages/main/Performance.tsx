@@ -2,9 +2,9 @@ const Performance = () => {
     return (
         <section
             id="performance"
-            className="py-15 bg-background overflow-hidden border-t border-nav-border"
+            className="py-15 bg-background overflow-hidden"
         >
-            <div className="text-center px-20 lg:px-50">
+            <div className="text-center px-10 md:px-20 lg:px-50">
                 <h1 className="text-5xl font-black tracking-tighter uppercase mb-4">
                     EDAX รวดเร็วและเป็นกลาง
                 </h1>
