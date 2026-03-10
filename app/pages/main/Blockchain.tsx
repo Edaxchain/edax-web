@@ -57,7 +57,8 @@ const Blockchain = () => {
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                        One Blockchain. Multiple Smart Solutions.
+                        One Blockchain{" "}
+                        <span className="text-[#14F195]">Multiple Smart Solutions</span>
                     </h1>
                     <p className="text-gray-400 mb-6 text-lg">
                         EDAX ENERGY BLOCKCHAIN

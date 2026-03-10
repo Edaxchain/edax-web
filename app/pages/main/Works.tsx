@@ -40,7 +40,7 @@ const Works = () => {
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                        How EDAX Works
+                        How <span className="text-[#14F195]">EDAX</span>{" "} Works
                     </h1>
                 </div>
 

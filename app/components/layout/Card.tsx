@@ -12,7 +12,7 @@ const Card = ({
     img: string | StaticImageData;
 }) => {
     return (
-        <div className="bg-background p-6 rounded-lg shadow-lg border hover:border-[#14F195] transition-colors group">
+        <div className="bg-background p-6 rounded-lg shadow-lg border hover:border-[#14F195] transition-colors hover:scale-105 transition-transform duration-300 group">
             <div className="relative mb-6 overflow-hidden rounded-md flex justify-center">
                 {img ? (
                     <Image src={img} alt={title} className="object-cover" />
