@@ -1,30 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import {
-    Cpu, Zap, HeartPulse, GraduationCap,
-    Globe, Activity, Box, ChevronRight
-} from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-
-const categories = [
-    { id: 'all', name: 'All Products', icon: null, color: '#white' },
-    { id: 'city', name: 'Smart City', icon: <Globe size={18} />, color: '#A855F7' },
-    { id: 'energy', name: 'Smart Energy', icon: <Zap size={18} />, color: '#14F195' },
-    { id: 'health', name: 'Smart Health', icon: <HeartPulse size={18} />, color: '#3B82F6' },
-    { id: 'education', name: 'Smart Education', icon: <GraduationCap size={18} />, color: '#F97316' },
-];
-
-
-const allProducts = [
-    { id: 1, category: 'city', title: 'Technology EDAX Chain Innovation', desc: 'Core infrastructure for decentralized solutions.', img: '/product/Innovation.png', icon: <Cpu /> },
-    { id: 2, category: 'city', title: 'Metaverse Land Energy', desc: 'Sustainable energy for virtual real estate.', img: '/product/Land.png', icon: <Globe /> },
-    { id: 3, category: 'energy', title: 'EV Solar Charging', desc: 'Smart stations for electric vehicle charging.', img: '/product/EV.png', icon: <Zap /> },
-    { id: 4, category: 'energy', title: 'EDAX Energy Blockchain', desc: 'Transparent energy distribution network.', img: '/product/EnergyBC.png', icon: <Activity /> },
-    { id: 5, category: 'energy', title: 'SandBox Energy Blockchain', desc: 'Innovation testing environment for energy.', img: '/product/Sandbox.png', icon: <Box /> },
-    { id: 6, category: 'health', title: 'Smart Health Care', desc: 'AI-driven diagnostic and secured health data.', img: '/product/Healthcare.png', icon: <HeartPulse /> },
-    { id: 7, category: 'education', title: 'Ai Education', desc: 'Personalized AI-powered learning experiences.', img: '/product/Sed.png', icon: <GraduationCap /> },
-];
+import { allProducts, categories } from '@/data/Products';
 
 export default function ProductsPage() {
     const [activeTab, setActiveTab] = useState('all');
@@ -119,6 +98,7 @@ export default function ProductsPage() {
                                                         <div className="relative z-10">
                                                             <h3 className="text-xl font-bold mb-3">{product.title}</h3>
                                                             <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">{product.desc}</p>
+                                                            
                                                             {/* Product website */}
                                                         <Link href={`/pages/products`}
                                                             className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 transition-all group-hover:gap-3"

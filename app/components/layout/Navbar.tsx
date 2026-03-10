@@ -3,12 +3,15 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { ConnectWallet } from '@/app/contexts/ConnectWallet'; 
-
+import { ConnectWallet } from '@/app/contexts/ConnectWallet';
+import { MegaMenuTemplate } from './MegaMenu';
+import { allProducts, categories } from '@/data/Products';
 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-nav-border border-b bg-nav-bg px-6 py-4">
 
@@ -27,22 +30,28 @@ const Navbar = () => {
             Home
           </Link>
 
-          <div className="group relative cursor-pointer">
-          <Link href="/#blockchain" className="text-sm font-medium text-foreground hover:opacity-70">
-            <span className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
-              Products
-            </span>
+          <div
+            className="relative flex items-center cursor-pointer h-full py-2"
+            onMouseEnter={() => setOpenMenu('products')}
+            onMouseLeave={() => setOpenMenu(null)}
+          >
+            <Link href="/#blockchain" className="text-sm font-medium text-foreground hover:opacity-70">
+              <span className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
+                Products
+              </span>
             </Link>
-            {/* Dropdown */}
-            <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
-              <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart City</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Energy</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Health</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Smart Education</div>
 
+            {openMenu === 'products' && (
+              <div className="absolute top-full left-0 z-50">
+                <div className="-mt-10 pt-10 bg-transparent">
+                  <MegaMenuTemplate items={allProducts}
+                    categoryName="Innovations"
+                    onMenuHover={() => setOpenMenu('products')}
+                    onMenuLeave={() => setOpenMenu(null)}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="group relative cursor-pointer">
@@ -112,7 +121,7 @@ const Navbar = () => {
             </Link>
             {/* Dropdown */}
             <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
-              <div className="min-w-[150px] overflow-hidden border border-nav-border bg-nav-bg p-2 shadow-xl">
+              <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
                 <Link href="/pages/support#faq">
                   <div className="px-4 py-2 text-sm hover:bg-nav-border/20">FAQ</div></Link>
                 <Link href="/pages/support#ticket">
@@ -150,8 +159,8 @@ const Navbar = () => {
           >
             <Menu size={24} />
           </button>
-          
-          
+
+
         </div>
 
 
@@ -174,9 +183,9 @@ const Navbar = () => {
               <Link href="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Products</Link>
               <Link href="/pages/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#14F195]">Support</Link>
               <Link href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Roadmap</Link>
-              
+
               <ConnectWallet />
-              
+
             </nav>
           </div>
         </div>
