@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '@/app/pages/main/Hero'
 import Roadmap from '@/app/pages/main/Roadmap'
+import Partners from '@/app/pages/about/Partners'
 
 export default function LandingPage() {
   return (
@@ -8,10 +9,10 @@ export default function LandingPage() {
    <main className="flex min-h-screen flex-col py-12">
       <Hero />
       
-      {/* วาง Roadmap ต่อจาก Hero ได้เลย */}
+      
       <Roadmap />
       
-      {/* ส่วนอื่นๆ เช่น Products หรือ Support ที่คุณทำไว้ */}
+      <Partners />
     </main>
   )
 }
