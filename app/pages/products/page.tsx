@@ -17,13 +17,13 @@ const categories = [
 
 
 const allProducts = [
-    { id: 1, category: 'city', title: 'Technology EDAX Chain Innovation', desc: 'Core infrastructure for decentralized solutions.', img: '', icon: <Cpu /> },
-    { id: 2, category: 'city', title: 'Metaverse Land Energy', desc: 'Sustainable energy for virtual real estate.', img: '', icon: <Globe /> },
-    { id: 3, category: 'energy', title: 'EV Solar Charging', desc: 'Smart stations for electric vehicle charging.', img: '', icon: <Zap /> },
-    { id: 4, category: 'energy', title: 'EDAX Energy Blockchain', desc: 'Transparent energy distribution network.', img: '', icon: <Activity /> },
-    { id: 5, category: 'energy', title: 'SandBox Energy Blockchain', desc: 'Innovation testing environment for energy.', img: '', icon: <Box /> },
-    { id: 6, category: 'health', title: 'Smart Health Care', desc: 'AI-driven diagnostic and secured health data.', img: '', icon: <HeartPulse /> },
-    { id: 7, category: 'education', title: 'Ai Education', desc: 'Personalized AI-powered learning experiences.', img: '', icon: <GraduationCap /> },
+    { id: 1, category: 'city', title: 'Technology EDAX Chain Innovation', desc: 'Core infrastructure for decentralized solutions.', img: '/product/Innovation.png', icon: <Cpu /> },
+    { id: 2, category: 'city', title: 'Metaverse Land Energy', desc: 'Sustainable energy for virtual real estate.', img: '/product/Land.png', icon: <Globe /> },
+    { id: 3, category: 'energy', title: 'EV Solar Charging', desc: 'Smart stations for electric vehicle charging.', img: '/product/EV.png', icon: <Zap /> },
+    { id: 4, category: 'energy', title: 'EDAX Energy Blockchain', desc: 'Transparent energy distribution network.', img: '/product/EnergyBC.png', icon: <Activity /> },
+    { id: 5, category: 'energy', title: 'SandBox Energy Blockchain', desc: 'Innovation testing environment for energy.', img: '/product/Sandbox.png', icon: <Box /> },
+    { id: 6, category: 'health', title: 'Smart Health Care', desc: 'AI-driven diagnostic and secured health data.', img: '/product/Healthcare.png', icon: <HeartPulse /> },
+    { id: 7, category: 'education', title: 'Ai Education', desc: 'Personalized AI-powered learning experiences.', img: '/product/Sed.png', icon: <GraduationCap /> },
 ];
 
 export default function ProductsPage() {
@@ -99,32 +99,35 @@ export default function ProductsPage() {
                                                             style={{ backgroundColor: themeColor }}
                                                         />
 
-                                                        <div className="mb-6 inline-flex p-4 rounded-2xl bg-white/5 overflow-hidden">
+                                                        <div className={`relative w-full rounded-[1.5rem] mb-6 overflow-hidden transition-all duration-500 ${product.img ? 'h-60' : 'w-16 h-16 p-4 bg-white/5'
+                                                            }`}>
                                                             {product.img ? (
+                                                                
                                                                 <img
                                                                     src={product.img}
                                                                     alt={product.title}
-                                                                    className="w-12 h-12 object-contain"
+                                                                    className="w-full h-full object-cover origin-center scale-[1.20] transition-transform duration-700 group-hover:scale-[1.50]"
                                                                 />
                                                             ) : (
-
-                                                                <div style={{ color: themeColor }}>
+                                                                
+                                                                <div className="w-full h-full flex items-center justify-center" style={{ color: themeColor }}>
                                                                     {product.icon}
                                                                 </div>
                                                             )}
                                                         </div>
 
-                                                        <h3 className="text-xl font-bold mb-3">{product.title}</h3>
-                                                        <p className="text-gray-500 text-sm leading-relaxed mb-6">{product.desc}</p>
-
-                                                        {/* Product website
-                                                        <Link href={`/products/${product.id}`}
+                                                        <div className="relative z-10">
+                                                            <h3 className="text-xl font-bold mb-3">{product.title}</h3>
+                                                            <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">{product.desc}</p>
+                                                            {/* Product website */}
+                                                        <Link href={`/pages/products`}
                                                             className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 transition-all group-hover:gap-3"
                                                             style={{ color: themeColor }}
                                                         >
                                                             Explore <ChevronRight size={14} />
                                                         </Link>
-                                                        */}
+                                                        
+                                                        </div>
                                                     </div>
                                                 );
                                             })}
