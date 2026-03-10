@@ -1,4 +1,8 @@
 import Card from "@/app/components/layout/Card";
+import Feature1 from "@/app/assets/features/feature 1.png";
+import Feature2 from "@/app/assets/features/feature 2.png";
+import Feature3 from "@/app/assets/features/feature 3.png";
+import Feature4 from "@/app/assets/features/feature 4.png";
 
 const Blockchain = () => {
     const cards = [
@@ -10,7 +14,7 @@ const Blockchain = () => {
                 "Smart transportation & utilities",
                 "Decentralized city governance",
             ],
-            img: "",
+            img: Feature1,
         },
         {
             title: "Smart Energy",
@@ -21,7 +25,7 @@ const Blockchain = () => {
                 "Peer-to-peer energy trading",
                 "Transparent energy data",
             ],
-            img: "",
+            img: Feature2,
         },
         {
             title: "Smart Health",
@@ -31,7 +35,7 @@ const Blockchain = () => {
                 "Secure data sharing",
                 "Healthcare identity on blockchain",
             ],
-            img: "",
+            img: Feature3,
         },
         {
             title: "Smart Education",
@@ -41,7 +45,7 @@ const Blockchain = () => {
                 "Lifelong learning records",
                 "Verifiable academic history",
             ],
-            img: "",
+            img: Feature4,
         },
     ];
 

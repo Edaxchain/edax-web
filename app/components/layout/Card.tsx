@@ -13,13 +13,9 @@ const Card = ({
 }) => {
     return (
         <div className="bg-background p-6 rounded-lg shadow-lg border hover:border-[#14F195] transition-colors group">
-            <div className="relative mb-6 overflow-hidden rounded-md bg-nav-border/20">
+            <div className="relative mb-6 overflow-hidden rounded-md flex justify-center">
                 {img ? (
-                    <Image
-                        src={img}
-                        alt={title}
-                        className="object-cover"
-                    />
+                    <Image src={img} alt={title} className="object-cover" />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center text-white/20">
                         No Image

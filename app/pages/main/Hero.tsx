@@ -5,7 +5,7 @@ const Hero = () => {
             <img
                 src="/hero-bg.jpg"
                 alt="Edax Background"
-                className="absolute right-0 top-0 h-full w-2/3 object-cover opacity-60 z-0 pointer-events-none"
+                className="absolute right-0 top-0 h-full w-2/3 object-cover"
                 style={{
                     maskImage:
                         "linear-gradient(to left, black 50%, transparent)",
