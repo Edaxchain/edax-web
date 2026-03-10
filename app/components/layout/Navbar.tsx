@@ -76,16 +76,21 @@ const Navbar = () => {
 
 
           <div className="group relative cursor-pointer">
+            <Link href="/pages/about">
             <span className="flex items-center gap-1 text-sm font-medium text-foreground hover:opacity-70">
               About us
-            </span>
+            </span></Link>
             {/* Dropdown */}
             <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
               <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Our Team</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Mission</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Vision</div>
-                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Partners</div>
+                <Link href="/pages/about">
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Mission</div></Link>
+                <Link href="/pages/about">
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Vision</div></Link>
+                <Link href="/pages/about#team">
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Our Team</div></Link>
+                <Link href="/#partners">
+                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">Partners</div></Link>
               </div>
             </div>
           </div>
@@ -166,9 +171,10 @@ const Navbar = () => {
             {/* Mobile Nav Links */}
             <nav className="flex flex-col gap-6 text-center overflow-y-auto">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Home</Link>
-              <Link href="/products" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Products</Link>
-              <Link href="/pages/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#14F195]">Support</Link>
-              <Link href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Roadmap</Link>
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Products</Link>
+              <Link href="/pages/support" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Support</Link>
+              <Link href="/pages/about" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">About us</Link>
+              <Link href="/#roadmap" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold">Roadmap</Link>
               
               <ConnectWallet />
               
