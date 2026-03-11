@@ -30,7 +30,8 @@ export const Nav_content = {
     ],
 
     blog: [
-        { id: 'blog', title: 'Blog', desc: 'Deep dives, insights, and stories from the EDAX team.', img: '', href: '/' },
-        { id: 'news', title: 'News', desc: 'Official updates, announcements, and latest milestones.', img: '', href: '/' },
+        { id: 'news', title: 'News', desc: 'Official updates, announcements, and latest milestones.', img: '', href: '/pages/updates' },
+        { id: 'blog', title: 'Blog', desc: 'Deep dives, insights, and stories from the EDAX team.', img: '', href: '/pages/updates' },
+        
     ],
 };

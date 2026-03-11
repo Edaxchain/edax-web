@@ -24,7 +24,7 @@ export default function ProductsPage() {
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveTab(cat.id)}
-                                className={`flex items-center gap-2 px-6 py-3 rounded-2xl border transition-all duration-300 ${activeTab === cat.id
+                                className={`flex items-center gap-2 px-6 py-3 rounded-2xl border transition-all cursor-pointer duration-300 ${activeTab === cat.id
                                     ? 'bg-white text-black border-white scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]'
                                     : 'bg-white/5 border-white/10 text-gray-400 hover:border-white/30'
                                     }`}

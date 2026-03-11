@@ -1,0 +1,61 @@
+import Parser from 'rss-parser';
+import UpdatesContent from './Update';
+
+
+
+async function getData(url: string) {
+    const parser = new Parser();
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            },
+            next: { revalidate: 3600 } 
+        });
+
+        const xml = await response.text()
+        const feed = await parser.parseString(xml);
+        if (!feed || !feed.items) return [];
+        return {source: feed.title, 
+            items: feed.items.map(item => ({
+            title: item.title || '',
+            link: item.link || '',
+            pubDate: item.pubDate || '',
+            contentSnippet: item.contentSnippet || item.description || '',
+            enclosure: item.enclosure ? { url: item.enclosure.url } : null,
+            content: item['content:encoded'] || item.content || item.description || '',
+            //description: item.description || '',
+        })).slice(0, 5)}
+        ;
+    } catch (error) {
+        console.error(`Error fetching from ${url}:`, error);
+        return [];
+    }
+}
+
+
+
+
+export default async function UpdatePage() {
+    const [siamNews, stellarBlogs] = await Promise.all([
+     getData('https://siamblockchain.com?call_custom_simple_rss=1&csrp_posts_per_page=5'),
+     getData('https://stellar.org/blog/rss.xml')
+     
+    ]);
+return (
+        <main className="min-h-screen bg-black pt-32 pb-20 px-6">
+            <div className="max-w-5xl mx-auto">
+                <div className="mb-12 border-l-4 border-[#14F195] pl-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                        Latest News and Blogs
+                    </h1>
+                    <p className="text-gray-400 font-medium">อัปเดตข่าวสารวงการบล็อกเชนจาก EDAX Blockchain</p>
+                </div>
+
+                <UpdatesContent news={siamNews} blogs={stellarBlogs} />
+            </div>
+        </main>
+    );
+}
+
+    
