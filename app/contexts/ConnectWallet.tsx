@@ -33,10 +33,10 @@ export const ConnectWallet = () => {
                 className="bg-[#14F195] text-background rounded-full px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold transition-all hover: cursor-pointer hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(20,241,149,0.3)]"
             >
                 {/* บน Desktop */}
-                <span className="hidden sm:inline">Connect Wallet</span>
+                <span className="text-black hidden sm:inline">Connect Wallet</span>
 
                 {/* บน Mobile */}
-                <span className="sm:hidden">Connect</span>
+                <span className="text-black sm:hidden">Connect</span>
             </button>
         );
     }

@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 border-nav-border border-b bg-nav-bg px-6 py-4">
             <div className="mx-auto flex max-w-7xl items-center justify-between">
                 {/* Logo */}
-                <div className="flex items-center flex-shrink-0">
+                <div className="flex items-center shrink-0">
                     <Link
                         href="/"
                         className="text-2xl font-bold tracking-tighter text-foreground"
@@ -61,12 +61,12 @@ const Navbar = () => {
                         {/* Dropdown */}
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Product 1
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Product 2
-                                </div>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -78,15 +78,15 @@ const Navbar = () => {
                         {/* Dropdown */}
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Connect Wallet
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Wallet Guide
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Supported Wallets
-                                </div>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -105,15 +105,15 @@ const Navbar = () => {
                         {/* Dropdown */}
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     API Reference
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     SDK
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Tutorials
-                                </div>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -128,24 +128,24 @@ const Navbar = () => {
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
                                 <Link href="/pages/about">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Mission
-                                    </div>
+                                    </h2>
                                 </Link>
                                 <Link href="/pages/about">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Vision
-                                    </div>
+                                    </h2>
                                 </Link>
                                 <Link href="/pages/about#team">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Our Team
-                                    </div>
+                                    </h2>
                                 </Link>
                                 <Link href="/#partners">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Partners
-                                    </div>
+                                    </h2>
                                 </Link>
                             </div>
                         </div>
@@ -175,19 +175,19 @@ const Navbar = () => {
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] overflow-hidden border border-nav-border bg-nav-bg p-2 shadow-xl">
                                 <Link href="/pages/support#faq">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         FAQ
-                                    </div>
+                                    </h2>
                                 </Link>
                                 <Link href="/pages/support#ticket">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Ticket
-                                    </div>
+                                    </h2>
                                 </Link>
                                 <Link href="/pages/support#contact">
-                                    <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                    <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                         Contact us
-                                    </div>
+                                    </h2>
                                 </Link>
                             </div>
                         </div>
@@ -200,15 +200,15 @@ const Navbar = () => {
                         {/* Dropdown */}
                         <div className="invisible absolute top-full left-0 pt-2 z-50 group-hover:visible">
                             <div className="min-w-[150px] border border-nav-border bg-nav-bg p-2 shadow-xl">
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Term
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Privacy
-                                </div>
-                                <div className="px-4 py-2 text-sm hover:bg-nav-border/20">
+                                </h2>
+                                <h2 className="px-4 py-2 text-sm hover:bg-nav-border/20">
                                     Cookie Policy
-                                </div>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -242,7 +242,7 @@ const Navbar = () => {
                     <div className="p-6 flex flex-col h-full">
                         {/* Menu Header */}
                         <div className="flex items-center justify-between mb-10">
-                            <span className="text-2xl font-black text-[#14F195]">
+                            <span className="text-2xl font-black text-primary">
                                 EDAX
                             </span>
                             <button

@@ -6,7 +6,7 @@
     --border: #1b141c;
     --nav-bg: #ffffff;
     --nav-border: #f3f4f6;
-    --footer: #6ea6ff;
+    --footer: #7aadff;
     --footer-border: #f3f4f6;
     --primary-button: #14f195;
     --secondary-button: var(--color-black);
@@ -15,7 +15,7 @@
 }
 
 .dark {
-    --background: #1b141c;
+    --background: #120d13;
     --foreground: #ffffff;
     --primary: #3b82f6;
     --secondary: #1a68e6;
