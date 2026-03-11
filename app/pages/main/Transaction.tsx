@@ -3,7 +3,7 @@ import TransactionImg from "@/app/assets/transaction.png";
 
 const Transaction = () => {
     return (
-        <section id="transaction" className="py-15 bg-background">
+        <section id="transaction" className="py-15">
             <div className="px-10 md:px-20 lg:px-50 flex flex-col md:flex-row items-center gap-x-20 gap-y-10">
                 <div className="w-full sm:w-2/3 lg:w-1/3">
                     <Image
@@ -16,7 +16,7 @@ const Transaction = () => {
                     <h1 className="text-5xl text-right lg:text-6xl font-black tracking-tighter uppercase mb-6 leading-tight">
                         เส้นทางของธุรกรรม
                     </h1>
-                    <p className="text-gray-400 text-left text-lg leading-relaxed">
+                    <p className="text-left text-lg leading-relaxed">
                         เมื่อผู้ใช้ส่งธุรกรรมไปยัง EDAX RPC
                         ระบบจะรวบรวมธุรกรรมเป็นแบตช์ แล้วส่งไปให้ Espresso
                         (HotShot BFT) จัดลำดับและออกใบรับรองยืนยัน การจัดลำดับ
