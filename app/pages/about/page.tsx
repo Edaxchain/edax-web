@@ -1,0 +1,108 @@
+'use client';
+
+import Image from 'next/image';
+import Partners from './Partners';
+
+export default function AboutPage() {
+
+  const teamMembers = [
+    { name: 'Person1', role: 'Founder', image: '' },
+    { name: 'Person2', role: 'CEO', image: '' },
+    { name: 'Person3', role: 'CEO', image: '' },
+    { name: 'Person4', role: 'CEO', image: '' },
+  ];
+
+  return (
+    <main className="min-h-screen w-full bg-background text-foreground pt-24 pb-12">
+      <div className="max-w-6xl mx-auto w-full px-4 space-y-24">
+
+        {/* 1. Header Section */}
+        <section className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            About <span className="text-[#14F195]">EDAX</span>
+          </h1>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            EDAX คือแพลตฟอร์มที่มุ่งเน้นการนำเทคโนโลยีบล็อกเชนมาสร้างสรรค์โซลูชันแห่งอนาคต
+            เชื่อมต่อโลกดิจิทัลและโลกความจริงเข้าด้วยกัน เพื่อสร้างระบบนิเวศที่โปร่งใสและยั่งยืน
+          </p>
+        </section>
+
+        {/* 2. Mission & Vision Section  */}
+
+        <section id="missionvision" className="max-w-4xl mx-auto space-y-16 md:space-y-24">
+
+          {/* Mission */}
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Our <span className="text-[#14F195]">Mission</span>
+            </h2>
+            <p className="text-gray-200 text-xl md:text-2xl leading-relaxed font-medium">
+              "Mission text"
+            </p>
+          </div>
+
+
+          {/* Vision */}
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Our  <span className="text-[#14F195]">Vision</span>
+            </h2>
+            <p className="text-gray-200 text-xl md:text-2xl leading-relaxed font-medium">
+              "Vision text"
+            </p>
+          </div>
+
+        </section>
+
+        {/* 3. Our Team Section */}
+        <section id="team">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Our <span className="text-[#14F195]">Team</span>
+            </h2>
+            <p className="text-gray-400">ผู้อยู่เบื้องหลังความสำเร็จและวิสัยทัศน์ของ EDAX</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {teamMembers.map((member, idx) => (
+              <div
+                key={idx}
+                className="group relative bg-black rounded-3xl p-6 md:p-8 transition-all duration-500 overflow-hidden flex flex-col h-full border border-[#14F195]/50 shadow-[0_0_30px_rgba(20,241,149,0.05)] [@media(hover:hover)]:border-white/10 [@media(hover:hover)]:shadow-none [@media(hover:hover)]:hover:border-[#14F195]/50 [@media(hover:hover)]:hover:shadow-[0_0_30px_rgba(20,241,149,0.05)]"
+              >
+                <div className="w-24 h-24 mx-auto bg-black border border-[#14F195]/50 [@media(hover:hover)]:border-white/10 rounded-full mb-4 overflow-hidden group-hover:border-[#14F195]/50 transition-colors duration-300 flex items-center justify-center">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={96}
+                      height={96}
+                      className="w-full h-full object-cover grayscale-0 [@media(hover:hover)]:grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold text-[#14F195] [@media(hover:hover)]:text-gray-500 group-hover:text-[#14F195] transition-colors">
+                      {member.name.charAt(0)}
+                    </span>
+                  )}
+
+                </div>
+
+
+                <h3 className="text-lg font-bold text-white [@media(hover:hover)]:text-gray-200 group-hover:text-white transition-colors">
+                  {member.name}
+                </h3>
+
+                <p className="text-sm text-[#14F195] mt-1">{member.role}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 4. Partners Section */}
+        <div>
+          <Partners />
+        </div>
+
+      </div>
+    </main>
+  );
+}

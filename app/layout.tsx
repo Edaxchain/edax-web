@@ -14,15 +14,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-background text-foreground">
         <WalletContextProvider>
-        {/* Navbar */}
         <Navbar /> 
-        
-        {/* เนื้อหาจาก app/page.tsx */}
         <main>
           {children}
         </main>
-
-        {/* Footer */}
         <Footer />
         </WalletContextProvider>
       </body>

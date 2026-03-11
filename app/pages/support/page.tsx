@@ -118,7 +118,7 @@ const SupportPage = () => {
                             </div>
 
                             {/* Social Media Group */}
-                            <div className="md:col-span-2 pt-6 border-t border-nav-border">
+                            <div className="md:col-span-2 pt-6">
                                 <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-4 text-center md:text-left">Community & Social</p>
                                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                                     <a href="https://www.facebook.com/edaxofficial/"
