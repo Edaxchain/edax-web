@@ -9,6 +9,7 @@ export const ConnectWallet = () => {
     const { setVisible } = useWalletModal();
     const { publicKey, disconnect, connected, wallet } = useWallet();
     const [isOpen, setIsOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
 
 
@@ -56,31 +57,48 @@ export const ConnectWallet = () => {
 
             {/* Custom Dropdown Menu */}
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-nav-bg border border-white/10 shadow-2xl py-2 z-50 backdrop-blur-xl">
+                <div className="absolute mt-2 w-48 bg-nav-bg/95 backdrop-blur-2xl border border-nav-border/20 rounded-[2rem] shadow-2xl p-2 z-50">
                     <button
-                        onClick={() => { navigator.clipboard.writeText(base58 || ''); setIsOpen(false); }}
-                        className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-[#14F195] cursor-pointer transition-colors"
+                        onClick={() => {
+                            navigator.clipboard.writeText(base58 || '');
+                            setCopied(true);
 
+                            
+                            setTimeout(() => {
+                                setCopied(false);
+                                setIsOpen(false);
+                            }, 2000);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200 flex items-center justify-between"
                     >
-                        Copy Address
+                        <span>{copied ? 'Copied!' : 'Copy Address'}</span>
+                        {copied && (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#14F195" className="w-4 h-4 animate-bounce">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        )}
                     </button>
+
                     <Link
                         href="/pages/profile"
-                        onClick={() => setIsOpen(false)} 
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-[#14F195] cursor-pointer transition-colors"
+                        onClick={() => setIsOpen(false)}
+                        className="block w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200"
                     >
                         Profile
                     </Link>
+
                     <button
                         onClick={() => { setVisible(true); setIsOpen(false); }}
-                        className="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:text-[#14F195] cursor-pointer transition-colors"
+                        className="w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200"
                     >
                         Change Wallet
                     </button>
-                    <hr className="my-1 border-white/5" />
+
+                    <hr className="my-2 border-white/5 mx-2" />
+
                     <button
                         onClick={() => { disconnect(); setIsOpen(false); }}
-                        className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-white/10 hover:text-red-600 cursor-pointer transition-colors"
+                        className="w-full text-left px-4 py-2 text-sm text-red-400/80 hover:text-red-500 hover:bg-red-500/10 rounded-[1.5rem] cursor-pointer transition-all duration-200"
                     >
                         Disconnect
                     </button>

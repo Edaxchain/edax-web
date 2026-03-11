@@ -61,7 +61,7 @@ export const MegaMenuTemplate = ({
                 <div style={{ color: activeItem.id === item.id ? (item.color || '#14F195') : '#666' }}>
                   {item.icon || <div className="w-4 h-4 rounded-full bg-current opacity-20" />}
                 </div>
-                <span className={`text-sm font-bold transition-colors ${activeItem.id === item.id ? 'text-white' : 'text-gray-400'
+                <span className={`text-sm font-bold transition-colors ${activeItem.id === item.id ? 'text-foreground' : 'text-gray-400'
                   }`}>
                   {item.title}
                 </span>
