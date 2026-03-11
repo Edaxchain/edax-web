@@ -35,12 +35,12 @@ const Works = () => {
     return (
         <section
             id="works"
-            className="py-15 bg-background overflow-hidden"
+            className="py-15 overflow-hidden"
         >
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                        How <span className="text-[#14F195]">EDAX</span>{" "} Works
+                        How <span className="text-primary">EDAX</span>{" "} Works
                     </h1>
                 </div>
 
@@ -55,7 +55,7 @@ const Works = () => {
                         />
                     ))}
                 </div>
-                <p className="text-gray-400 text-center mb-6 text-lg">
+                <p className="text-center mb-6 text-lg">
                     EDAX is designed as a modular blockchain platform that
                     supports real-world smart infrastructure and digital
                     services through a single ecosystem.

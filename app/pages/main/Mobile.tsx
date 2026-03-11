@@ -5,13 +5,10 @@ import App from "@/app/assets/app.png";
 
 const Mobile = () => {
     return (
-        <section
-            id="mobile"
-            className="py-15 lg:py-40 bg-background overflow-hidden"
-        >
+        <section id="mobile" className="py-15 lg:py-40 overflow-hidden">
             <div className="px-6 md:px-20 lg:px-50 pt-[45vw] md:pt-[30vw] lg:pt-0">
                 {/* Main Card Container */}
-                <div className="relative rounded-[2.5rem] border border-white/10 grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-12 items-center p-8 lg:p-16">
+                <div className="relative rounded-[2.5rem] border border-border grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-12 items-center p-8 lg:p-16">
                     {/* Left Side: The Phone Mockup */}
                     <div className="relative h-[15vh] lg:h-full min-h-[120px] lg:min-h-0">
                         <div
@@ -35,22 +32,27 @@ const Mobile = () => {
                                     Preview Mode
                                 </span>
                             </div>
-                            <Image src={App} alt="app" fill className="object-cover" />
+                            <Image
+                                src={App}
+                                alt="app"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
 
                     {/* Right Side: Content Area */}
                     <div className="space-y-8 text-center lg:text-left">
                         <div className="space-y-4">
-                            <span className="text-[#14F195] font-bold tracking-widest uppercase text-sm">
+                            <span className="text-secondary font-bold tracking-widest uppercase text-sm">
                                 Experience Mobility
                             </span>
-                            <h1 className="text-4xl lg:text-6xl font-black tracking-tighter uppercase text-white leading-tight">
+                            <h1 className="text-4xl lg:text-6xl font-black tracking-tighter uppercase leading-tight">
                                 Get the{" "}
-                                <span className="text-[#14F195]">Mobile</span>{" "}
+                                <span className="text-primary">Mobile</span>{" "}
                                 <br className="hidden lg:block" /> Version
                             </h1>
-                            <p className="text-white/60 max-w-md mx-auto lg:mx-0 text-lg">
+                            <p className="max-w-md mx-auto lg:mx-0 text-lg">
                                 Trade on the go. Access all network features
                                 directly from your pocket with zero compromise.
                             </p>

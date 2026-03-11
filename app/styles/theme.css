@@ -1,0 +1,48 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #3b82f6;
+    --secondary: #1a68e6;
+    --border: #1b141c;
+    --nav-bg: #ffffff;
+    --nav-border: #f3f4f6;
+    --footer: #7aadff;
+    --footer-border: #f3f4f6;
+    --primary-button: #14f195;
+    --secondary-button: var(--color-black);
+    --text-main: #171717;
+    --text-sub:var(--color-gray-900);
+}
+
+.dark {
+    --background: #120d13;
+    --foreground: #ffffff;
+    --primary: #3b82f6;
+    --secondary: #1a68e6;
+    --border: #ffffff;
+    --nav-bg: #030204;
+    --nav-border: #000000;
+    --footer: #030204;
+    --footer-border: #000000;
+    --primary-button: #14f195;
+    --secondary-button: var(--color-black);
+    --text-main: #ffffff;
+    --text-sub: var(--color-gray-300);
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-primary-button: var(--primary-button);
+    --color-secondary-button: var(--secondary-button);
+    --color-border: var(--border);
+    --color-nav-bg: var(--nav-bg);
+    --color-nav-border: var(--nav-border);
+    --color-footer: var(--footer);
+    --color-footer-border: var(--footer-border);
+    --color-text-main: var(--text-main);
+    --color-text-sub: var(--text-sub);
+    --font-brand: "Inter", sans-serif;
+}
