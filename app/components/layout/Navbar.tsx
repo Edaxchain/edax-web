@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { ConnectWallet } from '@/app/contexts/ConnectWallet';
 import { MegaMenuTemplate } from './MegaMenu';
@@ -11,6 +12,7 @@ import { Nav_content } from '@/data/NavContent';
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const pathname = usePathname();
 
     const handleToggle = () => {
         const root = window.document.documentElement;
@@ -34,11 +36,17 @@ const Navbar = () => {
         }
     }, []);
 
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
+
+
+
     const navLinks = [
         { id: 'home', label: 'Home', href: '/' },
         { id: 'products', label: 'Products', data: allProducts, category: 'Innovations', href: '/pages/products' },
         { id: 'wallet', label: 'Wallet', data: Nav_content.wallet, category: 'Services', href: '/' },
-        { id: 'explorer', label: 'Explorer', href: '/' },
+        { id: 'explore', label: 'Explore', data: Nav_content.explore, href: '/pages/explore' },
         { id: 'docs', label: 'Docs/Developers', data: Nav_content.docs, category: 'Resources', href: '/' },
         { id: 'roadmap', label: 'Roadmap', href: '/#roadmap' },
         { id: 'blog', label: 'Blog/News', data: Nav_content.blog, category: 'Blog/News', href: '/pages/updates' },
@@ -54,9 +62,19 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex items-center flex-shrink-0">
                     <Link href="/" className="text-2xl font-bold tracking-tighter text-text-main hover:opacity-80 transition-opacity">
-                        EDAX
-                    </Link>
+                    <img
+                        src="/logo/EDAX.png"
+                        alt="EDAX Logo"
+                        className="block dark:hidden h-12 w-auto"
+                    />
+                    <img
+                        src="/logo/EDAX_white.png"
+                        alt="EDAX Logo"
+                        className="hidden dark:block h-12 w-auto"
+                    />
+                </Link>
                 </div>
+                
 
                 {/* Desktop Navigation */}
                 <div
@@ -81,7 +99,7 @@ const Navbar = () => {
 
                             {/* MegaMenu Dropdown */}
                             {link.data && openMenu === link.id && (
-                                <div className={`absolute top-full z-50 ${index > navLinks.length - 4 ? 'right-0' : 'left-0'}`}>
+                                <div className={`absolute top-full z-50 ${index > navLinks.length - 5 ? 'right-0' : 'left-0'}`}>
                                     <div className="-mt-1 pt-1">
                                         <MegaMenuTemplate
                                             items={link.data}

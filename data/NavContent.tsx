@@ -34,4 +34,10 @@ export const Nav_content = {
         { id: 'blog', title: 'Blog', desc: 'Deep dives, insights, and stories from the EDAX team.', img: '', href: '/pages/updates' },
         
     ],
+
+    explore: [
+        { id: 'swap', title: 'Swap', desc: 'Instant token exchange with optimized liquidity.', img: '', href: '/pages/explore/swap' },
+        { id: 'dashboard', title: 'Dashboard', desc: 'Visualize the market. Track assets and network growth through data-driven insights.', img: '', href: '/pages/explore' },
+        
+    ],
 };

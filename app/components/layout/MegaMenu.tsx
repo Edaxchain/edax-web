@@ -42,11 +42,11 @@ export const MegaMenuTemplate = ({
       onMouseLeave={onMenuLeave}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="relative w-[800px] bg-nav-bg/95 backdrop-blur-2xl border border-nav-border/20 rounded-[2rem] overflow-hidden shadow-2xl flex text-foreground"
+      className="relative w-[800px] bg-nav-bg/95 backdrop-blur-2xl border border-nav-border/20 rounded-[2rem] overflow-hidden shadow-2xl flex text-text-main"
     >
       {/* Dropdown */}
       <div className="w-1/3 p-6 bg-nav-bg/50 border-r border-nav-border/50">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6 font-black italic">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-text-sub mb-6 font-black italic">
           {categoryName}
         </p>
         <div className="space-y-1">
@@ -54,14 +54,14 @@ export const MegaMenuTemplate = ({
             <div
               key={item.id}
               onMouseEnter={() => setActiveItem(item)}
-              className={`group flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeItem.id === item.id ? 'bg-white/10 shadow-lg' : 'hover:bg-white/5'
+              className={`group flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeItem.id === item.id ? 'bg-nav-bg/10 shadow-lg' : 'hover:bg-nav-bg/5'
                 }`}
             >
               <div className="flex items-center gap-3">
-                <div style={{ color: activeItem.id === item.id ? (item.color || '#14F195') : '#666' }}>
+                <div style={{ color: activeItem.id === item.id ? (item.color || '#3b82f6') : '#666' }}>
                   {item.icon || <div className="w-4 h-4 rounded-full bg-current opacity-20" />}
                 </div>
-                <span className={`text-sm font-bold transition-colors ${activeItem.id === item.id ? 'text-foreground' : 'text-gray-400'
+                <span className={`text-sm font-bold transition-colors ${activeItem.id === item.id ? 'text-text-main' : 'text-text-sub'
                   }`}>
                   {item.title}
                 </span>
@@ -76,7 +76,7 @@ export const MegaMenuTemplate = ({
       {/* Preview */}
       <div className="w-2/3 p-8 flex flex-col relative overflow-hidden">
         {/* Image */}
-        <div className="relative z-10 overflow-hidden rounded-2xl h-48 mb-6 border border-white/5 bg-black/40 shadow-inner">
+        <div className="relative z-10 overflow-hidden rounded-2xl h-48 mb-6 border border-nav-border/5 bg-nav-bg/40 shadow-inner">
           {activeItem.img ? (
             <motion.img
               key={activeItem.img}
@@ -88,14 +88,14 @@ export const MegaMenuTemplate = ({
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-600 bg-white/5 italic text-sm">
+            <div className="w-full h-full flex items-center justify-center text-text-sub bg-foreground/50 italic text-sm">
               No Preview Available
             </div>
           )}
         </div>
 
         <div className="relative z-10">
-          <h4 className="text-2xl font-black mb-2 tracking-tight" style={{ color: activeItem.color || '#14F195' }}>
+          <h4 className="text-2xl font-black mb-2 tracking-tight" style={{ color: activeItem.color || '#3b82f6' }}>
             {activeItem.title}
           </h4>
 
@@ -105,14 +105,14 @@ export const MegaMenuTemplate = ({
               {activeItem.desc}
             </p>
           ) : (
-            <p className="text-gray-600 text-sm italic">Explore more details about this section.</p>
+            <p className="text-text-main text-sm italic">Explore more details about this section.</p>
           )}
 
           
           {activeItem.href && (
             <Link
               href={activeItem.href}
-              className="inline-flex mt-6 px-6 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all group/btn"
+              className="inline-flex mt-6 px-6 py-2 rounded-full border border-nav-border bg-primary-button text-[10px] font-bold uppercase tracking-widest hover:bg-foreground/10 hover:text-text-main transition-all group/btn"
             >
               Explore Now
               <ExternalLink size={12} className="ml-2 opacity-0 group-hover/btn:opacity-100 transition-opacity" />

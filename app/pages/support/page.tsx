@@ -37,7 +37,7 @@ const SupportPage = () => {
 
                         <div className="divide-y divide-border/5">
                             <details className="group border-none outline-none">
-                                <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-text-main hover:bg-primary-button/5 transition-colors list-none">
+                                <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-text-main hover:bg-foreground/5 transition-colors list-none">
                                     <span>EDAX Network คืออะไร?</span>
                                     <ChevronDown size={18} className="text-text-main transition-transform group-open:rotate-180" />
                                 </summary>
@@ -47,7 +47,7 @@ const SupportPage = () => {
                             </details>
 
                             <details className="group border-none outline-none">
-                                <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-foreground hover:bg-primary-button/5 transition-colors list-none">
+                                <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-text-main hover:bg-foreground/5 transition-colors list-none">
                                     <span>ความปลอดภัยของระบบเป็นอย่างไร?</span>
                                     <ChevronDown size={18} className="text-text-main transition-transform group-open:rotate-180" />
                                 </summary>
@@ -66,7 +66,7 @@ const SupportPage = () => {
                             <h3 className="text-xl font-bold mb-2">Submit a Ticket</h3>
                             <p className="text-sm text-text-main">หากพบปัญหาทางเทคนิค สามารถแจ้งเรื่องให้ทีมงานตรวจสอบได้ทันที</p>
                         </div>
-                        <button className="whitespace-nowrap px-8 py-3 bg-background text-text-main font-bold rounded-full hover:opacity-90 transition-opacity">
+                        <button className="whitespace-nowrap px-8 py-3 bg-primary-button text-text-main font-bold rounded-full cursor-pointer hover:bg-primary-button/70 transition-colors">
                             Open Ticket
                         </button>
                     </div>
