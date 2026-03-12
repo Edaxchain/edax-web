@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import Partners from './Partners';
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+  const t = useTranslations("AboutPage");
 
   const teamMembers = [
     { name: 'Person1', role: 'Founder', image: '' },

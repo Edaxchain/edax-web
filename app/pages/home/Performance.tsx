@@ -13,10 +13,10 @@ const Performance = () => {
                     {t("performance.title")}
                 </h1>
                 <p className="mb-6 text-lg">
-                    {t("performance.description-1")}
+                    {t("performance.description_1")}
                 </p>
                 <p className="text-left text-lg">
-                    {t("performance.description-2")}
+                    {t("performance.description_2")}
                 </p>
             </div>
         </section>

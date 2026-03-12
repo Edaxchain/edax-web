@@ -166,7 +166,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-3">
                     {/* Language Toggle */}
                     <button
-                        className="px-3 py-2 rounded-lg bg-card border border-border text-foreground cursor-pointer hover:bg-nav-border/20 transition-colors text-xs font-bold uppercase min-w-[40px]"
+                        className="px-3 py-2 rounded-lg bg-card border border-border text-foreground cursor-pointer hover:bg-nav-border/20 transition-colors text-xs uppercase min-w-[40px]"
                         onClick={async () => {
                             const newLocale = locale === "en" ? "th" : "en";
                             await setUserLocale(newLocale);
@@ -174,7 +174,27 @@ const Navbar = () => {
                         }}
                         aria-label="Switch language"
                     >
-                        {locale === "en" ? "TH" : "EN"}
+                        <span
+                            className={
+                                locale === "en"
+                                    ? "font-bold text-foreground"
+                                    : "font-normal text-muted-foreground"
+                            }
+                        >
+                            EN
+                        </span>
+                        <span className="mx-1 font-normal text-muted-foreground">
+                            /
+                        </span>
+                        <span
+                            className={
+                                locale === "th"
+                                    ? "font-bold text-foreground"
+                                    : "font-normal text-muted-foreground"
+                            }
+                        >
+                            TH
+                        </span>
                     </button>
 
                     {/* Theme */}

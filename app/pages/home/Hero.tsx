@@ -30,12 +30,12 @@ const Hero = () => {
                 <div className="flex gap-4">
                     {/* ปุ่ม EXPLORE */}
                     <button className="bg-primary-button text-black rounded-full cursor-pointer px-10 py-3 text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-[#14F195]/30">
-                        {t("hero.button-1")}
+                        {t("hero.button_1")}
                     </button>
 
                     {/* ปุ่ม JOURNEY */}
                     <button className="bg-secondary-button text-white border border-edax-border rounded-full cursor-pointer px-10 py-3 text-sm font-bold uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-black/30">
-                        {t("hero.button-2")}
+                        {t("hero.button_2")}
                     </button>
                 </div>
             </div>

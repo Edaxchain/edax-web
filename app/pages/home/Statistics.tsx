@@ -13,10 +13,10 @@ const Statistics = () => {
     const t = useTranslations("HomePage");
 
     const stats = [
-        { value: "2,459", label: t("statistics.total-users") },
-        { value: "20", label: t("statistics.total-partners") },
-        { value: "35.0", label: t("statistics.floor-price") },
-        { value: "2M", label: t("statistics.volume-trades") },
+        { value: "2,459", label: t("statistics.total_users") },
+        { value: "20", label: t("statistics.total_partners") },
+        { value: "35.0", label: t("statistics.floor_price") },
+        { value: "2M", label: t("statistics.volume_trades") },
     ];
 
     return (
