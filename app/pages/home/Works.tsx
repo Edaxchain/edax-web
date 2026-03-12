@@ -3,8 +3,11 @@ import icon1 from "@/app/assets/icons/Icon 1.png";
 import icon2 from "@/app/assets/icons/Icon 2.png";
 import icon3 from "@/app/assets/icons/Icon 3.png";
 import icon4 from "@/app/assets/icons/Icon 4.png";
+import { useTranslations } from "next-intl";
 
 const Works = () => {
+    const t = useTranslations("HomePage");
+
     const cards = [
         {
             title: "1. Connect Wallet",
@@ -33,14 +36,15 @@ const Works = () => {
     ];
 
     return (
-        <section
-            id="works"
-            className="py-15 overflow-hidden"
-        >
+        <section id="works" className="py-15 overflow-hidden">
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                        How <span className="text-primary">EDAX</span>{" "} Works
+                        {t.rich("works.title", {
+                            primary: (chunks) => (
+                                <span className="text-primary">{chunks}</span>
+                            ),
+                        })}
                     </h1>
                 </div>
 
@@ -56,9 +60,7 @@ const Works = () => {
                     ))}
                 </div>
                 <p className="text-center mb-6 text-lg">
-                    EDAX is designed as a modular blockchain platform that
-                    supports real-world smart infrastructure and digital
-                    services through a single ecosystem.
+                    {t("works.description")}
                 </p>
             </div>
         </section>

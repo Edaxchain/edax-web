@@ -2,8 +2,11 @@ import Image from "next/image";
 import AppstoreImg from "@/app/assets/mobile/appstore.png";
 import PlaystoreImg from "@/app/assets/mobile/playstore.png";
 import App from "@/app/assets/app.png";
+import { useTranslations } from "next-intl";
 
 const Mobile = () => {
+    const t = useTranslations("HomePage");
+
     return (
         <section id="mobile" className="py-15 lg:py-40 overflow-hidden">
             <div className="px-6 md:px-20 lg:px-50 pt-[45vw] md:pt-[30vw] lg:pt-0">
@@ -45,16 +48,19 @@ const Mobile = () => {
                     <div className="space-y-8 text-center lg:text-left">
                         <div className="space-y-4">
                             <span className="text-secondary font-bold tracking-widest uppercase text-sm">
-                                Experience Mobility
+                                {t("mobile.pre-title")}
                             </span>
                             <h1 className="text-4xl lg:text-6xl font-black tracking-tighter uppercase leading-tight">
-                                Get the{" "}
-                                <span className="text-primary">Mobile</span>{" "}
-                                <br className="hidden lg:block" /> Version
+                                {t.rich("mobile.title", {
+                                    primary: (chunks) => (
+                                        <span className="text-primary">
+                                            {chunks}
+                                        </span>
+                                    ),
+                                })}
                             </h1>
                             <p className="max-w-md mx-auto lg:mx-0 text-lg">
-                                Trade on the go. Access all network features
-                                directly from your pocket with zero compromise.
+                                {t("mobile.description")}
                             </p>
                         </div>
 

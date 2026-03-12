@@ -1,0 +1,57 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "products": "Products",
+        "wallet": "Wallet",
+        "explorer": "Explorer",
+        "docs": "Docs/Developers",
+        "roadmap": "Roadmap",
+        "blog": "Blog/News",
+        "about": "About us",
+        "support": "Support",
+        "legal": "Legal",
+        "connect-wallet": "Connect Wallet",
+        "connect": "Connect"
+    },
+    "HomePage": {
+        "blockchain": {
+            "title": "One Blockchain <primary>Multiple Smart Solutions</primary>",
+            "subtitle": "EDAX ENERGY BLOCKCHAIN",
+            "description": "EDAX is designed as a modular blockchain platform that supports real-world smart infrastructure and digital services through a single ecosystem."
+        },
+        "features": {
+            "title": "Espresso Shared Sequencer (HotShot BFT)",
+            "description": "The Sequencer determines transaction order. Espresso provides centralized and decentralized sequencer services to multiple chains, issuing confirmation certificates (combined signatures) to prove fair and fast batch ordering. Users get fast confirmations before actual settlement on Ethereum."
+        },
+        "hero": {
+            "title": "EDAX Network Chain",
+            "description": "Focuses on developing an efficient and accessible digital financial system for Thai citizens of all levels. Emphasizes the use of high-security, high-speed, and cost-effective blockchain technology. Its highlight is to provide access to investment opportunities in energy industry assets, agricultural products, and digital banking.",
+            "button-1": "EXPLORE",
+            "button-2": "JOURNEY"
+        },
+        "mobile": {
+            "pre-title": "Experience Mobility",
+            "title": "Get the  <primary>Mobile</primary> Version",
+            "description": "Trade on the go. Access all network features directly from your pocket with zero compromise."
+        },
+        "performance": {
+            "title": "EDAX: Fast and Neutral",
+            "description-1": "EDAX provides a 'tangibly fast' experience—get feedback from Espresso within milliseconds after sending (target p95 < 1s).",
+            "description-2": "Transaction ordering is transparent as it uses a neutral shared sequencer, reducing the chance of frontrunning. Auditability of 'time/order' is enhanced by referencing Solana's Proof-of-History (PoH) independently. Fee costs decrease as traffic grows due to the Modular DA architecture, starting from Ethereum calldata and flexibly expanding to EigenDA/Celestia later. All of this operates under the 'safety net' of Ethereum, which performs final settlement and provides a fraud-proof window."
+        },
+        "statistics": {
+            "total-users": "Total users",
+            "total-partners": "Total Partners",
+            "floor-price": "Floor Price",
+            "volume-trades": "Volume Trades"
+        },
+        "transaction": {
+            "title": "Transaction Path",
+            "description": "When a user sends a transaction to EDAX RPC, the system compiles it into a batch and sends it to Espresso (HotShot BFT) for ordering and confirmation certificates. EDAX then publishes batch data to the Data Availability layer (starting with Ethereum calldata), recording proof of time with Solana Proof-of-History (slot and blockhash), then processed on Nitro EVM. If valid, the batch is accepted and later settled on Ethereum L1 with a fraud-proof window."
+        },
+        "works": {
+            "title": "How <primary>EDAX</primary> Works",
+            "description": "EDAX is designed as a modular blockchain platform that supports real-world smart infrastructure and digital services through a single ecosystem."
+        }
+    }
+}
