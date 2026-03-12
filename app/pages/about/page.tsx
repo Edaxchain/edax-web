@@ -13,15 +13,15 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen w-full bg-background text-foreground pt-24 pb-12">
+    <main className="min-h-screen w-full bg-background text-text-main pt-24 pb-12">
       <div className="max-w-6xl mx-auto w-full px-4 space-y-24">
 
         {/* 1. Header Section */}
         <section className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About <span className="text-[#14F195]">EDAX</span>
+            About EDAX
           </h1>
-          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+          <p className="text-text-main text-base md:text-lg leading-relaxed">
             EDAX คือแพลตฟอร์มที่มุ่งเน้นการนำเทคโนโลยีบล็อกเชนมาสร้างสรรค์โซลูชันแห่งอนาคต
             เชื่อมต่อโลกดิจิทัลและโลกความจริงเข้าด้วยกัน เพื่อสร้างระบบนิเวศที่โปร่งใสและยั่งยืน
           </p>
@@ -34,9 +34,9 @@ export default function AboutPage() {
           {/* Mission */}
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Our <span className="text-[#14F195]">Mission</span>
+              Our Mission
             </h2>
-            <p className="text-gray-200 text-xl md:text-2xl leading-relaxed font-medium">
+            <p className="text-text-main text-xl md:text-2xl leading-relaxed font-medium">
               "Mission text"
             </p>
           </div>
@@ -45,9 +45,9 @@ export default function AboutPage() {
           {/* Vision */}
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Our  <span className="text-[#14F195]">Vision</span>
+              Our Vision
             </h2>
-            <p className="text-gray-200 text-xl md:text-2xl leading-relaxed font-medium">
+            <p className="text-text-main text-xl md:text-2xl leading-relaxed font-medium">
               "Vision text"
             </p>
           </div>
@@ -58,18 +58,18 @@ export default function AboutPage() {
         <section id="team">
           <div className="text-center mb-4">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Our <span className="text-[#14F195]">Team</span>
+              Our Team
             </h2>
-            <p className="text-gray-400">ผู้อยู่เบื้องหลังความสำเร็จและวิสัยทัศน์ของ EDAX</p>
+            <p className="text-text-main">ผู้อยู่เบื้องหลังความสำเร็จและวิสัยทัศน์ของ EDAX</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {teamMembers.map((member, idx) => (
               <div
                 key={idx}
-                className="group relative bg-black rounded-3xl p-6 md:p-8 transition-all duration-500 overflow-hidden flex flex-col h-full border border-[#14F195]/50 shadow-[0_0_30px_rgba(20,241,149,0.05)] [@media(hover:hover)]:border-white/10 [@media(hover:hover)]:shadow-none [@media(hover:hover)]:hover:border-[#14F195]/50 [@media(hover:hover)]:hover:shadow-[0_0_30px_rgba(20,241,149,0.05)]"
+                className="group relative bg-background rounded-3xl p-6 md:p-8 transition-all duration-500 overflow-hidden flex flex-col h-full border border-border/50 shadow-border [@media(hover:hover)]:border-border/10 [@media(hover:hover)]:shadow-none [@media(hover:hover)]:hover:border-border/50 [@media(hover:hover)]:hover:shadow-border"
               >
-                <div className="w-24 h-24 mx-auto bg-black border border-[#14F195]/50 [@media(hover:hover)]:border-white/10 rounded-full mb-4 overflow-hidden group-hover:border-[#14F195]/50 transition-colors duration-300 flex items-center justify-center">
+                <div className="w-24 h-24 mx-auto bg-background border border-border/50 [@media(hover:hover)]:border-border/10 rounded-full mb-4 overflow-hidden group-hover:border-border/50 transition-colors duration-300 flex items-center justify-center">
                   {member.image ? (
                     <Image
                       src={member.image}
@@ -79,7 +79,7 @@ export default function AboutPage() {
                       className="w-full h-full object-cover grayscale-0 [@media(hover:hover)]:grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   ) : (
-                    <span className="text-2xl font-bold text-[#14F195] [@media(hover:hover)]:text-gray-500 group-hover:text-[#14F195] transition-colors">
+                    <span className="text-2xl font-bold text-text-main [@media(hover:hover)]:text-text-sub group-hover:text-primary transition-colors">
                       {member.name.charAt(0)}
                     </span>
                   )}
@@ -87,11 +87,11 @@ export default function AboutPage() {
                 </div>
 
 
-                <h3 className="text-lg font-bold text-white [@media(hover:hover)]:text-gray-200 group-hover:text-white transition-colors">
+                <h3 className="text-lg font-bold text-text-main [@media(hover:hover)]:text-gray-200 group-hover:text-primary transition-colors">
                   {member.name}
                 </h3>
 
-                <p className="text-sm text-[#14F195] mt-1">{member.role}</p>
+                <p className="text-sm text-text-main mt-1">{member.role}</p>
               </div>
             ))}
           </div>

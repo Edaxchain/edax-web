@@ -48,9 +48,9 @@ export default function Partners() {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Our <span className="text-[#14F195]">Partners</span>
+                        Our Partners
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+                    <p className="text-text-main max-w-2xl mx-auto text-sm md:text-base">
                         ขับเคลื่อนนวัตกรรมและเติบโตไปพร้อมกับพันธมิตรที่แข็งแกร่งของเราจากหลากหลายอุตสาหกรรม
                     </p>
                 </div>
@@ -62,14 +62,14 @@ export default function Partners() {
 
                         <div
                             key={category.id}
-                            className="group relative bg-black rounded-3xl p-6 md:p-8 transition-all duration-500 overflow-hidden flex flex-col h-full border border-[#14F195]/50 shadow-[0_0_30px_rgba(20,241,149,0.05)] [@media(hover:hover)]:border-white/10 [@media(hover:hover)]:shadow-none [@media(hover:hover)]:hover:border-[#14F195]/50 [@media(hover:hover)]:hover:shadow-[0_0_30px_rgba(20,241,149,0.05)]"
+                            className="group relative bg-background rounded-3xl p-6 md:p-8 transition-all duration-500 overflow-hidden flex flex-col h-full border border-border/50 shadow-border [@media(hover:hover)]:border-border/10 [@media(hover:hover)]:shadow-none [@media(hover:hover)]:hover:border-border/50 [@media(hover:hover)]:hover:shadow-border"
                         >
                             {/* Category */}
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 rounded-xl transition-colors bg-[#14F195]/10 text-[#14F195] [@media(hover:hover)]:bg-white/5 [@media(hover:hover)]:text-gray-400 group-hover:bg-[#14F195]/10 group-hover:text-[#14F195]">
+                                <div className="p-3 rounded-xl transition-colors bg-background/10 text-text-main [@media(hover:hover)]:bg-background/5 [@media(hover:hover)]:text-text-sub group-hover:bg-primary-button/10 group-hover:text-primary">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-xl font-bold transition-colors text-white [@media(hover:hover)]:text-gray-300 group-hover:text-white">
+                                <h3 className="text-xl font-bold transition-colors text-text-main [@media(hover:hover)]:text-text-sub group-hover:text-text-main">
                                     {category.title}
                                 </h3>
                             </div>
@@ -79,7 +79,7 @@ export default function Partners() {
                                 {category.partners.map((partner, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-black border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 flex-1 min-w-[150px] [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                        className="bg-background border border-border/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 flex-1 min-w-[150px] [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                     >
                                         {/* Logo */}
                                         {partner.logo && (
@@ -90,7 +90,7 @@ export default function Partners() {
                                             />
                                         )}
                                         {/* Text */}
-                                        <span className="font-semibold text-center text-sm md:text-base text-gray-300 break-words text-balance">
+                                        <span className="font-semibold text-center text-sm md:text-base text-text-sub break-words text-balance">
                                             {partner.name}
                                         </span>
                                     </div>

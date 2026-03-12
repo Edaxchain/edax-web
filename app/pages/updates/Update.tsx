@@ -80,7 +80,7 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
                         <span className="text-[10px] font-bold text-text-main uppercase tracking-widest bg-primary-button/10 px-3 py-1 rounded-full">{source}</span>
                         <span className="text-text-sub text-xs font-medium">{formatDate(item.pubDate)}</span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-text-main group-hover:text-foreground transition-colors line-clamp-2">{item.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-text-main group-hover:text-text-main/70 transition-colors line-clamp-2">{item.title}</h3>
                     <p className="text-text-sub text-sm mt-3 line-clamp-2">{item.contentSnippet || "Read more"}</p>
                 </div>
             </a>
@@ -109,7 +109,7 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
                     ) : (
                         
                         <div className="flex flex-col items-center justify-center py-24 gap-4">
-                            <LoaderCircle className="animate-spin text-[#14F195]" size={48} />
+                            <LoaderCircle className="animate-spin text-primary" size={48} />
                             <p className="text-text-main font-medium animate-pulse tracking-widest text-sm">
                                 Fetching News...
                             </p>
@@ -120,7 +120,7 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
                         blogItems.map((item: any) => renderCard(item, blogSource))
                     ) : (
                         <div className="flex flex-col items-center justify-center py-24 gap-4">
-                            <LoaderCircle className="animate-spin text-[#14F195]" size={48} />
+                            <LoaderCircle className="animate-spin text-primary" size={48} />
                             <p className="text-text-main font-medium animate-pulse tracking-widest text-sm">
                                 Fetching Blogs...
                             </p>

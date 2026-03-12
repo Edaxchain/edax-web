@@ -43,13 +43,13 @@ export default async function UpdatePage() {
      
     ]);
 return (
-        <main className="min-h-screen bg-black pt-32 pb-20 px-6">
+        <main className="min-h-screen bg-background pt-32 pb-20 px-6">
             <div className="max-w-5xl mx-auto">
-                <div className="mb-12 border-l-4 border-[#14F195] pl-6">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <div className="mb-12 border-l-4 border-primary pl-6">
+                    <h1 className="text-4xl md:text-5xl font-bold text-text-main mb-2">
                         Latest News and Blogs
                     </h1>
-                    <p className="text-gray-400 font-medium">อัปเดตข่าวสารวงการบล็อกเชนจาก EDAX Blockchain</p>
+                    <p className="text-text-sub font-medium">อัปเดตข่าวสารวงการบล็อกเชนจาก EDAX Blockchain</p>
                 </div>
 
                 <UpdatesContent news={siamNews} blogs={stellarBlogs} />
