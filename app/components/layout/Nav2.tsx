@@ -8,7 +8,7 @@ import { MegaMenuTemplate } from './MegaMenu';
 import { allProducts } from '@/data/Products';
 import { Nav_content } from '@/data/NavContent';
 
-const Navbar = () => {
+const Navbar2 = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<string | null>(null);
 
@@ -161,4 +161,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar2

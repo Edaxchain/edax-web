@@ -9,13 +9,13 @@ export default function ProductsPage() {
     const [activeTab, setActiveTab] = useState('all');
 
     return (
-        <div className="min-h-screen bg-background text-foreground pt-24 pb-20 px-6">
+        <div className="min-h-screen bg-background text-text-main pt-24 pb-20 px-6">
             <div className="max-w-7xl mx-auto">
 
                 {/*  Header */}
                 <header className="text-center mb-20">
                     <h1 className="text-5xl md:text-5xl font-black mb-10 uppercase tracking-tighter">
-                        Our <span className="text-[#14F195]">Products</span>
+                        Our Products
                     </h1>
 
                     {/* Filter */}
@@ -25,8 +25,8 @@ export default function ProductsPage() {
                                 key={cat.id}
                                 onClick={() => setActiveTab(cat.id)}
                                 className={`flex items-center gap-2 px-6 py-3 rounded-2xl border transition-all cursor-pointer duration-300 ${activeTab === cat.id
-                                    ? 'bg-white text-black border-white scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]'
-                                    : 'bg-white/5 border-white/10 text-gray-400 hover:border-white/30'
+                                    ? 'bg-primary-button text-text-main border-border scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)]'
+                                    : 'bg-secondary-button/5 border-border/10 text-text-sub hover:bg-secondary-button/50 hover:border-border/30'
                                     }`}
                             >
                                 {cat.icon}
@@ -63,9 +63,8 @@ export default function ProductsPage() {
                                                 return (
                                                     <div
                                                         key={product.id}
-                                                        className="group relative bg-[#121212] border border-white/5 rounded-[2.5rem] p-8 transition-all duration-500 overflow-hidden"
+                                                        className="group relative bg-background border border-border rounded-[2.5rem] p-8 transition-all duration-500 overflow-hidden"
                                                         style={{
-
                                                             boxShadow: `0 0 0px ${themeColor}00`
                                                         }}
 
@@ -78,17 +77,17 @@ export default function ProductsPage() {
                                                             style={{ backgroundColor: themeColor }}
                                                         />
 
-                                                        <div className={`relative w-full rounded-[1.5rem] mb-6 overflow-hidden transition-all duration-500 ${product.img ? 'h-60' : 'w-16 h-16 p-4 bg-white/5'
+                                                        <div className={`relative w-full rounded-[1.5rem] mb-6 overflow-hidden transition-all duration-500 bg-background/5 border border-nav-border/50 ${product.img ? 'h-60' : 'w-16 h-16 p-4'
                                                             }`}>
                                                             {product.img ? (
-                                                                
+
                                                                 <img
                                                                     src={product.img}
                                                                     alt={product.title}
                                                                     className="w-full h-full object-cover origin-center scale-[1.20] transition-transform duration-700 group-hover:scale-[1.50]"
                                                                 />
                                                             ) : (
-                                                                
+
                                                                 <div className="w-full h-full flex items-center justify-center" style={{ color: themeColor }}>
                                                                     {product.icon}
                                                                 </div>
@@ -97,16 +96,16 @@ export default function ProductsPage() {
 
                                                         <div className="relative z-10">
                                                             <h3 className="text-xl font-bold mb-3">{product.title}</h3>
-                                                            <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">{product.desc}</p>
-                                                            
+                                                            <p className="text-text-sub text-sm leading-relaxed mb-6 line-clamp-2">{product.desc}</p>
+
                                                             {/* Product website */}
-                                                        <Link href={`/pages/products`}
-                                                            className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 transition-all group-hover:gap-3"
-                                                            style={{ color: themeColor }}
-                                                        >
-                                                            Explore <ChevronRight size={14} />
-                                                        </Link>
-                                                        
+                                                            <Link href={`/pages/products`}
+                                                                className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 transition-all group-hover:gap-3"
+                                                                style={{ color: themeColor }}
+                                                            >
+                                                                Explore <ChevronRight size={14} />
+                                                            </Link>
+
                                                         </div>
                                                     </div>
                                                 );

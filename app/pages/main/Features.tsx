@@ -17,24 +17,22 @@ const Card = ({
 
     return (
         <div
-            className="relative p-8 rounded-3xl shadow-2xl border border-white/10 cursor-pointer overflow-hidden group min-h-[300px] flex flex-col justify-end transition-all duration-500"
+            className="relative p-8 rounded-3xl shadow-2xl cursor-pointer overflow-hidden group min-h-[300px] flex flex-col justify-end transition-all duration-500"
             style={{
                 backgroundImage: `url("${bgUrl}")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
         >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-[#14F195] transition-opacity duration-500 pointer-events-none" />
-
             {/* 3. Content - Positioned on top of the background */}
             <div className="relative z-10 flex items-center justify-between gap-4">
                 {/* Title - 'flex-1' ensures it takes up available space but doesn't crush the arrow */}
-                <h2 className="text-left text-xl lg:text-2xl font-bold text-white group-hover:text-[#14F195] transition-colors duration-300 flex-1 line-clamp-2">
+                <h2 className="text-left text-xl lg:text-2xl font-bold text-white group-hover:text-primary transition-colors flex-1 line-clamp-2">
                     {title}
                 </h2>
 
                 {/* Arrow Icon - No 'mt-4' needed anymore since they are in the same row */}
-                <div className="shrink-0 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:border-[#14F195] group-hover:text-[#14F195] transition-all">
+                <div className="shrink-0 w-10 h-10 rounded-full border flex items-center justify-center text-white group-hover:border-primary group-hover:text-primary transition-all">
                     →
                 </div>
             </div>
@@ -67,7 +65,7 @@ const Features = () => {
     ];
 
     return (
-        <section id="features" className="py-15 bg-background overflow-hidden">
+        <section id="features" className="py-15 overflow-hidden">
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-5 md:px-0 gap-15 mb-16">
                     {cards.map((card, index) => (

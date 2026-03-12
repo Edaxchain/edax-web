@@ -71,17 +71,17 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
         const imageUrl = extractImage(item) || FALLBACK_IMAGE;
         return (
             <a key={item.link} href={item.link} target="_blank" rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row gap-6 bg-white/5 border border-white/10 p-5 rounded-[2.5rem] hover:border-[#14F195]/40 transition-all duration-300 hover:bg-white/[0.08]">
-                <div className="w-full md:w-64 h-48 md:h-40 shrink-0 overflow-hidden rounded-[2rem] border border-white/5">
+                className="group flex flex-col md:flex-row gap-6 bg-white/5 border border-border/10 p-5 rounded-[2.5rem] hover:border-border/40 transition-all duration-300 hover:bg-primary-button/10">
+                <div className="w-full md:w-64 h-48 md:h-40 shrink-0 overflow-hidden rounded-[2rem] border border-border/5">
                     <img src={imageUrl} referrerPolicy="no-referrer" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="" />
                 </div>
                 <div className="flex flex-col justify-center flex-1">
                     <div className="flex items-center gap-3 mb-3">
-                        <span className="text-[10px] font-bold text-[#14F195] uppercase tracking-widest bg-[#14F195]/10 px-3 py-1 rounded-full">{source}</span>
-                        <span className="text-gray-500 text-xs font-medium">{formatDate(item.pubDate)}</span>
+                        <span className="text-[10px] font-bold text-text-main uppercase tracking-widest bg-primary-button/10 px-3 py-1 rounded-full">{source}</span>
+                        <span className="text-text-sub text-xs font-medium">{formatDate(item.pubDate)}</span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-100 group-hover:text-white transition-colors line-clamp-2">{item.title}</h3>
-                    <p className="text-gray-400 text-sm mt-3 line-clamp-2">{item.contentSnippet || "Read more"}</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-text-main group-hover:text-foreground transition-colors line-clamp-2">{item.title}</h3>
+                    <p className="text-text-sub text-sm mt-3 line-clamp-2">{item.contentSnippet || "Read more"}</p>
                 </div>
             </a>
         );
@@ -90,13 +90,13 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
     return (
         <>
             {/* Tab */}
-            <div className="flex p-1.5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full w-fit mb-12">
+            <div className="flex p-1.5 bg-background backdrop-blur-xl border border-border/10 rounded-full w-fit mb-12">
                 <button onClick={() => setActiveTab('news')}
-                    className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'news' ? 'bg-[#14F195] text-black shadow-lg' : 'text-gray-400'}`}>
+                    className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'news' ? 'bg-primary-button text-text-main shadow-lg' : 'text-text-sub'}`}>
                     <Newspaper size={16} /> News
                 </button>
                 <button onClick={() => setActiveTab('blog')}
-                    className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'blog' ? 'bg-[#14F195] text-black shadow-lg' : 'text-gray-400'}`}>
+                    className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'blog' ? 'bg-primary-button text-text-main shadow-lg' : 'text-text-sub'}`}>
                     <BookOpen size={16} /> Blogs
                 </button>
             </div>
@@ -110,7 +110,7 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
                         
                         <div className="flex flex-col items-center justify-center py-24 gap-4">
                             <LoaderCircle className="animate-spin text-[#14F195]" size={48} />
-                            <p className="text-gray-500 font-medium animate-pulse tracking-widest text-sm">
+                            <p className="text-text-main font-medium animate-pulse tracking-widest text-sm">
                                 Fetching News...
                             </p>
                         </div>
@@ -121,7 +121,7 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
                     ) : (
                         <div className="flex flex-col items-center justify-center py-24 gap-4">
                             <LoaderCircle className="animate-spin text-[#14F195]" size={48} />
-                            <p className="text-gray-500 font-medium animate-pulse tracking-widest text-sm">
+                            <p className="text-text-main font-medium animate-pulse tracking-widest text-sm">
                                 Fetching Blogs...
                             </p>
                         </div>
