@@ -18,6 +18,7 @@ interface Props {
   categoryName: string;
   onMenuHover?: () => void;
   onMenuLeave?: () => void;
+  onItemClick?: () => void;
   basePath?: string;
 }
 
@@ -26,6 +27,7 @@ export const MegaMenuTemplate = ({
   categoryName,
   onMenuHover,
   onMenuLeave,
+  onItemClick,
   basePath = "/"
 }: Props) => {
   const [activeItem, setActiveItem] = useState(items[0]);
@@ -51,9 +53,11 @@ export const MegaMenuTemplate = ({
         </p>
         <div className="space-y-1">
           {items.map((item) => (
-            <div
+            <Link
               key={item.id}
               onMouseEnter={() => setActiveItem(item)}
+              href={item.href || '#'}
+              onClick={onItemClick}
               className={`group flex items-center justify-between p-3 rounded-xl cursor-pointer transition-all duration-300 ${activeItem.id === item.id ? 'bg-nav-bg/10 shadow-lg' : 'hover:bg-nav-bg/5'
                 }`}
             >
@@ -68,7 +72,7 @@ export const MegaMenuTemplate = ({
               </div>
               <ChevronRight size={14} className={`transition-transform ${activeItem.id === item.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'
                 }`} />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -88,9 +92,25 @@ export const MegaMenuTemplate = ({
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-text-sub bg-foreground/50 italic text-sm">
-              No Preview Available
-            </div>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              key={activeItem.id}
+              className="flex items-center justify-center w-full h-full relative"
+            >
+              
+              <div
+                className="absolute w-24 h-24 rounded-full blur-[40px] opacity-30"
+                style={{ backgroundColor: activeItem.color || '#3b82f6' }}
+              />
+
+              <div
+                className="relative z-10 scale-[4] transition-transform duration-500"
+                style={{ color: activeItem.color || '#3b82f6' }}
+              >
+                {activeItem.icon || <div className="w-4 h-4 rounded-full bg-current opacity-20" />}
+              </div>
+            </motion.div>
           )}
         </div>
 
@@ -108,7 +128,7 @@ export const MegaMenuTemplate = ({
             <p className="text-text-main text-sm italic">Explore more details about this section.</p>
           )}
 
-          
+
           {activeItem.href && (
             <Link
               href={activeItem.href}

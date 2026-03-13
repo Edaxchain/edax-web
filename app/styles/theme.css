@@ -12,6 +12,9 @@
     --secondary-button: var(--color-black);
     --text-main: #171717;
     --text-sub:var(--color-gray-900);
+    --done-status: #14f195;
+    --progress-status: var(--color-yellow-400);
+    --upcoming-status: var(--color-gray-400);
 }
 
 .dark {
@@ -28,6 +31,9 @@
     --secondary-button: var(--color-black);
     --text-main: #ffffff;
     --text-sub: var(--color-gray-300);
+    --done-status: #14f195;
+    --progress-status: var(--color-yellow-400);
+    --upcoming-status: var(--color-gray-400);
 }
 
 @theme {
@@ -44,5 +50,8 @@
     --color-footer-border: var(--footer-border);
     --color-text-main: var(--text-main);
     --color-text-sub: var(--text-sub);
+    --color-done-status: var(--done-status);
+    --color-progress-status: var(--progress-status);
+    --color-upcoming-status: var(--upcoming-status);
     --font-brand: "Inter", sans-serif;
 }
