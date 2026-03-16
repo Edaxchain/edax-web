@@ -78,5 +78,22 @@
             "address-info": "82/11 หมู่ 5 ตำบลเสาธงหิน อำเภอบางใหญ่ จังหวัดนนทบุรี 11140"
         },
         "community_social": "ชุมชนและโซเชียล"
+    },
+    "ProductPage": {
+        "title": "<primary>ผลิตภัณฑ์</primary> ของเรา",
+        "allproducts": "สินค้าทั้งหมด",
+        "explore": "สำรวจ",
+        "smart_city": {
+            "title": "เมืองอัจฉริยะ"
+        },
+        "smart_energy": {
+            "title": "พลังงานอัจฉริยะ"
+        },
+        "smart_health": {
+            "title": "สุขภาพอัจฉริยะ"
+        },
+        "smart_education": {
+            "title": "การศึกษาอัจฉริยะ"
+        }
     }
 }

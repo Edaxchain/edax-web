@@ -53,7 +53,7 @@ const SupportPage = () => {
 
                             <details className="group border-none outline-none">
                                 <summary className="flex cursor-pointer items-center justify-between p-6 text-lg font-medium text-foreground hover:bg-primary-button/5 transition-colors list-none">
-                                    <span>{t("faq.question_2")}?</span>
+                                    <span>{t("faq.question_2")}</span>
                                     <ChevronDown
                                         size={18}
                                         className="text-text-main transition-transform group-open:rotate-180"

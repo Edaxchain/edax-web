@@ -4,8 +4,10 @@ import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { allProducts, categories } from "@/data/Products";
+import { useTranslations } from "next-intl";
 
 export default function ProductsPage() {
+    const t = useTranslations("ProductPage");
     const [activeTab, setActiveTab] = useState("all");
 
     return (
@@ -14,7 +16,11 @@ export default function ProductsPage() {
                 {/*  Header */}
                 <header className="text-center mb-20">
                     <h1 className="text-5xl md:text-5xl font-black mb-10 uppercase tracking-tighter">
-                        Our Products
+                        {t.rich("title", {
+                            primary: (chunks) => (
+                                <span className="text-primary">{chunks}</span>
+                            ),
+                        })}
                     </h1>
 
                     {/* Filter */}
@@ -37,7 +43,7 @@ export default function ProductsPage() {
                                     <span
                                         className={`text-sm font-bold uppercase ${isActive ? "!text-black" : ""}`}
                                     >
-                                        {cat.name}
+                                        {t(cat.nameKey)}
                                     </span>
                                 </button>
                             );
@@ -67,7 +73,7 @@ export default function ProductsPage() {
                                             }}
                                         />
                                         <h2 className="text-3xl font-black uppercase tracking-tight">
-                                            {category.name}
+                                            {t(category.nameKey)}
                                         </h2>
                                     </div>
 
@@ -117,7 +123,7 @@ export default function ProductsPage() {
                                                                         product.img
                                                                     }
                                                                     alt={
-                                                                        product.title
+                                                                        product.titleKey
                                                                     }
                                                                     className="w-full h-full object-cover origin-center scale-[1.20] transition-transform duration-700 group-hover:scale-[1.50]"
                                                                 />
@@ -137,10 +143,10 @@ export default function ProductsPage() {
 
                                                         <div className="relative z-10">
                                                             <h3 className="text-xl font-bold mb-3">
-                                                                {product.title}
+                                                                {product.titleKey}
                                                             </h3>
                                                             <p className="text-text-sub text-sm leading-relaxed mb-6 line-clamp-2">
-                                                                {product.desc}
+                                                                {product.descKey}
                                                             </p>
 
                                                             {/* Product website */}
@@ -151,7 +157,7 @@ export default function ProductsPage() {
                                                                     color: themeColor,
                                                                 }}
                                                             >
-                                                                Explore{" "}
+                                                                {t("explore")}{" "}
                                                                 <ChevronRight
                                                                     size={14}
                                                                 />

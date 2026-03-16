@@ -78,5 +78,22 @@
             "address-info": "82/11 M.5, Sao Thong Hin Subdistrict, Bang Yai district, Nonthaburi 11140"
         },
         "community_social": "Community & Social"
+    },
+    "ProductPage": {
+        "title": "Our <primary>Products</primary>",
+        "allproducts": "All Products",
+        "explore": "Explore",
+        "smart_city": {
+            "title": "Smart City"
+        },
+        "smart_energy": {
+            "title": "Smart Energy"
+        },
+        "smart_health": {
+            "title": "Smart Health"
+        },
+        "smart_education": {
+            "title": "Smart Education"
+        }
     }
 }
