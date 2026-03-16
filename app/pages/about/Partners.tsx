@@ -43,7 +43,7 @@ export default function Partners() {
     ];
 
     return (
-        <section id="partners" className="w-full bg-background text-foreground py-4 md:py-4">
+        <section id="partners" className="w-full bg-background text-text-main py-4 md:py-4">
             <div className="max-w-6xl mx-auto w-full">
 
                 {/* Header */}
@@ -67,7 +67,7 @@ export default function Partners() {
                         >
                             {/* Category */}
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 rounded-xl transition-colors bg-background/10 text-text-main [@media(hover:hover)]:bg-background/5 [@media(hover:hover)]:text-text-sub group-hover:bg-primary-button/10 group-hover:text-primary">
+                                <div className="p-3 rounded-xl transition-colors bg-background/10 text-text-main [@media(hover:hover)]:bg-background/5 [@media(hover:hover)]:text-text-sub group-hover:bg-foreground/10 group-hover:text-primary">
                                     {category.icon}
                                 </div>
                                 <h3 className="text-xl font-bold transition-colors text-text-main [@media(hover:hover)]:text-text-sub group-hover:text-text-main">
@@ -80,7 +80,7 @@ export default function Partners() {
                                 {category.partners.map((partner, idx) => (
                                     <div
                                         key={idx}
-                                        className="bg-background border border-border/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 flex-1 min-w-[150px] [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                                        className="bg-background border border-border/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 flex-1 min-w-[150px] [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                                     >
                                         {/* Logo */}
                                         {partner.logo && (

@@ -1,7 +1,10 @@
 "use client";
-import { useState } from "react";
-import { LoaderCircle, Newspaper, BookOpen } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { LoaderCircle, Newspaper, BookOpen } from 'lucide-react';
+
+
 
 const extractImage = (item: any) => {
     let url = item.enclosure?.url;
@@ -76,10 +79,25 @@ const formatDate = (rawDate: string | undefined) => {
 
 export default function UpdatesContent({ news = [], blogs = [] }: any) {
     const t = useTranslations("UpdatePage");
-    const [activeTab, setActiveTab] = useState<"news" | "blog">("news");
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const currentTab = (searchParams.get('tab') as 'news' | 'blog') || 'news';
+    const [activeTab, setActiveTab] = useState<'news' | 'blog'>(currentTab);
+
+    useEffect(() => {
+        const tab = searchParams.get('tab') as 'news' | 'blog';
+        if (tab && (tab === 'news' || tab === 'blog')) {
+            setActiveTab(tab);
+        }
+    }, [searchParams]);
+
+    const handleTabChange = (tab: 'news' | 'blog') => {
+        setActiveTab(tab);
+        router.replace(`/pages/updates?tab=${tab}`, { scroll: false });
+    };
+
     const newsItems = news?.items || [];
     const newsSource = news?.source || "News";
-
     const blogItems = blogs?.items || [];
     const blogSource = blogs?.source || "Blogs";
 

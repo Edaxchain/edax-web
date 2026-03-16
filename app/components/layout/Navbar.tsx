@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { setUserLocale } from "@/i18n/locale";
 import { ConnectWallet } from "@/app/contexts/ConnectWallet";
 import { MegaMenuTemplate } from "./MegaMenu";
 import { allProducts } from "@/data/Products";
 import { Nav_content } from "@/data/NavContent";
+import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react'
 
 const Navbar = () => {
     const locale = useLocale();
@@ -17,6 +17,7 @@ const Navbar = () => {
     const router = useRouter();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openMenu, setOpenMenu] = useState<string | null>(null);
+    const pathname = usePathname();
 
     const handleToggle = () => {
         const root = window.document.documentElement;
@@ -41,6 +42,12 @@ const Navbar = () => {
             document.documentElement.classList.remove("dark");
         }
     }, []);
+
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
+
+
 
     const navLinks = [
         { id: "home", label: t("home"), href: "/" },
@@ -102,13 +109,20 @@ const Navbar = () => {
             <div className="mx-auto flex w-full max-w-7xl items-center justify-between h-full">
                 {/* Logo */}
                 <div className="flex items-center flex-shrink-0">
-                    <Link
-                        href="/"
-                        className="text-2xl font-bold tracking-tighter text-text-main hover:opacity-80 transition-opacity"
-                    >
-                        EDAX
+                    <Link href="/" className="text-2xl font-bold tracking-tighter text-text-main hover:opacity-80 transition-opacity">
+                        <img
+                            src="/logo/EDAX.png"
+                            alt="EDAX Logo"
+                            className="block dark:hidden h-12 w-auto"
+                        />
+                        <img
+                            src="/logo/EDAX_white.png"
+                            alt="EDAX Logo"
+                            className="hidden dark:block h-12 w-auto"
+                        />
                     </Link>
                 </div>
+
 
                 {/* Desktop Navigation */}
                 <div
@@ -142,19 +156,14 @@ const Navbar = () => {
 
                             {/* MegaMenu Dropdown */}
                             {link.data && openMenu === link.id && (
-                                <div
-                                    className={`absolute top-full z-50 ${index > navLinks.length - 4 ? "right-0" : "left-0"}`}
-                                >
+                                <div className={`absolute top-full z-50 ${index > navLinks.length - 5 ? 'right-0' : 'left-0'}`}>
                                     <div className="-mt-1 pt-1">
                                         <MegaMenuTemplate
                                             items={link.data}
                                             categoryName={link.category || ""}
-                                            onMenuHover={() =>
-                                                setOpenMenu(link.id)
-                                            }
-                                            onMenuLeave={() =>
-                                                setOpenMenu(null)
-                                            }
+                                            onMenuHover={() => setOpenMenu(link.id)}
+                                            onMenuLeave={() => setOpenMenu(null)}
+                                            onItemClick={() => setOpenMenu(null)}
                                         />
                                     </div>
                                 </div>
@@ -228,35 +237,67 @@ const Navbar = () => {
             >
                 <div className="p-6 flex flex-col h-full overflow-y-auto">
                     <div className="flex items-center justify-between mb-10">
-                        <span className="text-2xl font-black text-primary-button">
-                            EDAX
-                        </span>
-                        <button
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="p-2 text-text-main"
-                        >
+                        {/* Logo */}
+                        <div className="flex items-center flex-shrink-0">
+                            <Link href="/">
+                                <img
+                                    src="/logo/EDAX.png"
+                                    alt="EDAX Logo"
+                                    className="block dark:hidden h-12 w-auto"
+                                />
+                                <img
+                                    src="/logo/EDAX_white.png"
+                                    alt="EDAX Logo"
+                                    className="hidden dark:block h-12 w-auto"
+                                />
+                            </Link>
+                        </div>
+                        <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-text-main">
                             <X size={32} />
                         </button>
                     </div>
 
-                    <nav className="flex flex-col gap-6 text-center pb-10">
+                    <nav className="flex flex-col gap-6 text-left pb-10">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.id}
-                                href={link.href || "#"}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-2xl font-bold text-text-main"
-                            >
-                                {link.label}
-                            </Link>
+                            <div key={link.id} className="flex flex-col gap-4">
+                                {link.data ? (
+                                    <details className="group">
+                                        <summary className="flex justify-between items-center text-2xl font-bold text-text-main list-none cursor-pointer">
+                                            {link.label}
+                                            <ChevronDown size={24} className="group-open:rotate-180 transition-transform" />
+                                        </summary>
+                                        <div className="flex flex-col gap-4 mt-4 pl-4 border-l-2 border-primary-button/30">
+                                            {link.data.map((item) => (
+                                                <Link
+                                                    key={item.id}
+                                                    href={item.href || '#'}
+                                                    onClick={() => setIsMobileMenuOpen(false)}
+                                                    className="text-lg text-text-sub hover:text-primary-button"
+                                                >
+                                                    {item.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </details>
+                                ) : (
+                                    
+                                    <Link
+                                        href={link.href || '#'}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-2xl font-bold text-text-main"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                )}
+                            </div>
                         ))}
-
                         <div className="pt-6 flex justify-center">
                             <div className="inline-block transform scale-140">
                                 <ConnectWallet />
                             </div>
                         </div>
                     </nav>
+                    
                 </div>
             </div>
         </nav>

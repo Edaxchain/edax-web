@@ -5,15 +5,24 @@ const Footer = () => {
     <footer className="bg-footer text-foreground py-16 px-8 border-t border-footer-border">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          
+
           {/* Logo & Tagline */}
           <div className="md:col-span-4">
-            <div className="flex items-center gap-2 mb-6">
-              {/* แทนที่ด้วยไฟล์ SVG โลโก้ของคุณ */}
-              <div className="w-8 h-8 bg-secondary rounded-full"></div>
-              <span className="text-2xl font-bold tracking-tight">EDAX</span>
+            <div className="flex items-center flex-shrink-0">
+              <Link href="/" className="text-2xl font-bold tracking-tighter text-text-main hover:opacity-80 transition-opacity">
+                <img
+                  src="/logo/EDAX.png"
+                  alt="EDAX Logo"
+                  className="block dark:hidden h-12 w-auto"
+                />
+                <img
+                  src="/logo/EDAX_white.png"
+                  alt="EDAX Logo"
+                  className="hidden dark:block h-12 w-auto"
+                />
+              </Link>
             </div>
-            <p className="text-foreground text-sm max-w-xs">
+            <p className="text-foreground text-sm max-w-xs py-4">
               Start Building The Smart Future With EDAX
             </p>
           </div>
@@ -40,7 +49,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* Copyright */}
         <div className="mt-3 pt-8 text-center">
           <p className="text-sm flex items-center justify-center gap-1">

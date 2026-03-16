@@ -150,13 +150,13 @@ export default function ProfilePage() {
                             href={`https://solscan.io/account/${address}?cluster=devnet`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 bg-primary-button/50 hover:bg-primary-button/10 text-center py-3 rounded-full font-bold transition-colors border border-border/10"
+                            className="flex-1 bg-primary-button hover:bg-primary-button/50 text-center py-3 rounded-full font-bold transition-colors border border-border"
                         >
                             View on Solscan ↗
                         </a>
                         <button
                             onClick={handleDisconnect}
-                            className="flex-1 bg-secondary-button/30 hover:bg-red-200/20 text-center py-3 rounded-full font-bold transition-colors border border-border/10 hover:cursor-pointer"
+                            className="flex-1 text-red-500 bg-secondary-button hover:bg-foreground/50 text-center py-3 rounded-full font-bold transition-colors border border-border hover:cursor-pointer"
                         >
                             Disconnect
                         </button>

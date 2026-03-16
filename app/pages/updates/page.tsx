@@ -18,25 +18,17 @@ async function getData(url: string) {
         if (!feed || !feed.items) return [];
         return {
             source: feed.title,
-            items: feed.items
-                .map((item) => ({
-                    title: item.title || "",
-                    link: item.link || "",
-                    pubDate: item.pubDate || "",
-                    contentSnippet:
-                        item.contentSnippet || item.description || "",
-                    enclosure: item.enclosure
-                        ? { url: item.enclosure.url }
-                        : null,
-                    content:
-                        item["content:encoded"] ||
-                        item.content ||
-                        item.description ||
-                        "",
-                    //description: item.description || '',
-                }))
-                .slice(0, 5),
-        };
+            items: feed.items.map(item => ({
+                title: item.title || '',
+                link: item.link || '',
+                pubDate: item.pubDate || '',
+                contentSnippet: item.contentSnippet || item.description || '',
+                enclosure: item.enclosure ? { url: item.enclosure.url } : null,
+                content: item['content:encoded'] || item.content || item.description || '',
+                //description: item.description || '',
+            })).slice(0, 5)
+        }
+            ;
     } catch (error) {
         console.error(`Error fetching from ${url}:`, error);
         return [];
@@ -62,8 +54,9 @@ export default async function UpdatePage() {
                         {t("description")}
                     </p>
                 </div>
-
-                <UpdatesContent news={siamNews} blogs={stellarBlogs} />
+                <Suspense fallback={<div className="text-primary animate-pulse font-black italic">LOADING...</div>}>
+                    <UpdatesContent news={siamNews} blogs={stellarBlogs} />
+                </Suspense>
             </div>
         </main>
     );
