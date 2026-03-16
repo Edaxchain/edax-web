@@ -31,13 +31,13 @@ export const ConnectWallet = () => {
         return (
             <button
                 onClick={() => setVisible(true)}
-                className="bg-[#14F195] text-background rounded-full px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold transition-all hover: cursor-pointer hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(20,241,149,0.3)]"
+                className="bg-primary-button text-text-main rounded-full px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold transition-all hover: cursor-pointer hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(20,241,149,0.3)]"
             >
                 {/* บน Desktop */}
-                <span className="text-black hidden sm:inline">Connect Wallet</span>
+                <span className="text-text-main hidden sm:inline">Connect Wallet</span>
 
                 {/* บน Mobile */}
-                <span className="text-black sm:hidden">Connect</span>
+                <span className="text-text-main sm:hidden">Connect</span>
             </button>
         );
     }
@@ -46,7 +46,7 @@ export const ConnectWallet = () => {
         <div className="relative" ref={dropdownRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 bg-nav-bg border border-[#14F195]/30 text-foreground rounded-full px-4 py-2 text-sm font-medium hover: cursor-pointer hover:border-[#14F195] transition-all "
+                className="flex items-center gap-2 bg-nav-bg border border-primary-button/50 text-text-main rounded-full px-4 py-2 text-sm font-medium hover: cursor-pointer hover:border-primary-button transition-all "
             >
                 {/* Icon */}
                 {wallet?.adapter.icon && (
@@ -69,7 +69,7 @@ export const ConnectWallet = () => {
                                 setIsOpen(false);
                             }, 2000);
                         }}
-                        className="w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200 flex items-center justify-between"
+                        className="w-full text-left px-4 py-2 text-sm text-text-main md:text-text-sub hover:text-text-main hover:bg-foreground/10 rounded-[1.5rem] cursor-pointer transition-all duration-200 flex items-center justify-between"
                     >
                         <span>{copied ? 'Copied!' : 'Copy Address'}</span>
                         {copied && (
@@ -82,19 +82,19 @@ export const ConnectWallet = () => {
                     <Link
                         href="/pages/profile"
                         onClick={() => setIsOpen(false)}
-                        className="block w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200"
+                        className="block w-full text-left px-4 py-2 text-sm text-text-main md:text-text-sub hover:text-text-main hover:bg-foreground/10 rounded-[1.5rem] cursor-pointer transition-all duration-200"
                     >
                         Profile
                     </Link>
 
                     <button
                         onClick={() => { setVisible(true); setIsOpen(false); }}
-                        className="w-full text-left px-4 py-2 text-sm text-foreground md:text-gray-400 hover:text-foreground hover:bg-white/5 rounded-[1.5rem] cursor-pointer transition-all duration-200"
+                        className="block w-full text-left px-4 py-2 text-sm text-text-main md:text-text-sub hover:text-text-main hover:bg-foreground/10 rounded-[1.5rem] cursor-pointer transition-all duration-200"
                     >
                         Change Wallet
                     </button>
 
-                    <hr className="my-2 border-white/5 mx-2" />
+                    <hr className="my-2 border-nav-border mx-2" />
 
                     <button
                         onClick={() => { disconnect(); setIsOpen(false); }}
