@@ -143,10 +143,14 @@ export default function ProductsPage() {
 
                                                         <div className="relative z-10">
                                                             <h3 className="text-xl font-bold mb-3">
-                                                                {product.titleKey}
+                                                                {
+                                                                    product.titleKey
+                                                                }
                                                             </h3>
                                                             <p className="text-text-sub text-sm leading-relaxed mb-6 line-clamp-2">
-                                                                {product.descKey}
+                                                                {
+                                                                    product.descKey
+                                                                }
                                                             </p>
 
                                                             {/* Product website */}

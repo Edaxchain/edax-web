@@ -119,5 +119,11 @@
             "agriculture": "Food & Agriculture",
             "hospitality": "Hospitality"
         }
+    },
+    "UpdatePage": {
+        "title": "Latest News and Blogs",
+        "description": "Blockchain news and updates from EDAX Blockchain",
+        "news": "News",
+        "blogs": "Blogs"
     }
 }

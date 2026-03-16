@@ -48,7 +48,7 @@ const Mobile = () => {
                     <div className="space-y-8 text-center lg:text-left">
                         <div className="space-y-4">
                             <span className="text-secondary font-bold tracking-widest uppercase text-sm">
-                                {t("mobile.pre-title")}
+                                {t("mobile.pre_title")}
                             </span>
                             <h1 className="text-4xl lg:text-6xl font-black tracking-tighter uppercase leading-tight">
                                 {t.rich("mobile.title", {
