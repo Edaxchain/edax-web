@@ -95,5 +95,29 @@
         "smart_education": {
             "title": "Smart Education"
         }
+    },
+    "AboutPage": {
+        "title": "About <primary>EDAX</primary>",
+        "description": "EDAX is a modular blockchain platform designed to support real-world smart infrastructure and digital services through a single ecosystem.",
+        "vision": {
+            "title": "Our Vision",
+            "description": ""
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": ""
+        },
+        "team": {
+            "title": "Our Team",
+            "description": "The People Behind the Success and Vision of EDAX"
+        },
+        "partner": {
+            "title": "Our Partners",
+            "description": "Driving innovation and growth together with our strong partners from various industries",
+            "education": "Education & Research",
+            "energy": "Energy & Environment",
+            "agriculture": "Food & Agriculture",
+            "hospitality": "Hospitality"
+        }
     }
 }
