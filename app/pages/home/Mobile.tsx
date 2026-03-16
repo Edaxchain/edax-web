@@ -8,7 +8,7 @@ const Mobile = () => {
     const t = useTranslations("HomePage");
 
     return (
-        <section id="mobile" className="py-15 lg:py-40 overflow-hidden">
+        <section id="mobile" className="py-15 lg:py-40 xl:py-100 overflow-hidden">
             <div className="px-6 md:px-20 lg:px-50 pt-[45vw] md:pt-[30vw] lg:pt-0">
                 {/* Main Card Container */}
                 <div className="relative rounded-[2.5rem] border border-border grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-12 items-center p-8 lg:p-16">
