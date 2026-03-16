@@ -1,9 +1,9 @@
 import { ArrowUp, ArrowDown, Activity } from 'lucide-react';
 
-async function getMarketData() {
+async function getMarketData(api: string) {
     try {
         const res = await fetch(
-            'https://api.coingecko.com/api/v3/coins/markets?vs_currency=thb&order=market_cap_desc&per_page=20&page=1&sparkline=true',
+            api,
             { next: { revalidate: 60 } }
         );
         if (!res.ok) throw new Error('Fetch failed');
@@ -46,7 +46,8 @@ const Sparkline = ({ data, change24h }: { data: number[], change24h: number }) =
 };
 
 export default async function DashboardPage() {
-    const coins = await getMarketData();
+    const CoinGeckco = process.env.CoinGecko_API!
+    const coins = await getMarketData(CoinGeckco)
 
     return (
         <div className="min-h-screen bg-background text-text-main pt-28 pb-20 px-6">

@@ -4,8 +4,6 @@ import React, { FC, ReactNode, useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
-    PhantomWalletAdapter,
-    SolflareWalletAdapter,
     AlphaWalletAdapter,
     LedgerWalletAdapter,
     CoinbaseWalletAdapter,
@@ -24,8 +22,6 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({ children })
 
     const wallets = useMemo(
         () => [
-            new PhantomWalletAdapter(),
-            new SolflareWalletAdapter(),
             new AlphaWalletAdapter(),
             new LedgerWalletAdapter(),
             new CoinbaseWalletAdapter(),
@@ -36,7 +32,7 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({ children })
 
     return (
         <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect
+            <WalletProvider wallets={wallets} autoConnect={true}
                 onError={(error) => {
                     if (error.name !== 'WalletConfigError') {
                         console.error(error);

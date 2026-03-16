@@ -12,9 +12,9 @@ import {
 
 export const Nav_content = {
     wallet: [
-        { id: 'connect', title: 'Connect Wallet', desc: 'Securely link your digital wallet to start using EDAX.', icon: <Wallet/>, img: '', href: '' },
-        { id: 'guide', title: 'Wallet Guide', desc: 'Step-by-step instructions for beginners and pro users.', icon: <Lightbulb/>, img: '', href: '/#works' },
-        { id: 'support', title: 'Supported Wallet', desc: 'Check the list of compatible wallets and platforms.', icon: <Wallet/>, img: '/nav/SupportW.png', href: '' },
+        { id: 'connect', title: 'Portfolio', desc: 'Securely link your digital wallet to start using EDAX.', icon: <Wallet/>, img: '', href: '/pages/profile' },
+        { id: 'guide', title: 'Wallet Guide', desc: 'Step-by-step instructions for beginners and pro users.', icon: <Lightbulb/>, img: '', href: '/pages/wallet?tab=guide' },
+        { id: 'support', title: 'Supported Wallet', desc: 'Check the list of compatible wallets and platforms.', icon: <Wallet/>, img: '/nav/SupportW.png', href: '/pages/wallet?tab=supported' },
     ],
 
     about: [
@@ -42,8 +42,8 @@ export const Nav_content = {
     ],
 
     blog: [
-        { id: 'news', title: 'News', desc: 'Official updates, announcements, and latest milestones.', icon:<Rss/>, img: '', href: '/pages/updates' },
-        { id: 'blog', title: 'Blog', desc: 'Deep dives, insights, and stories from the EDAX team.', icon:<Rss/>, img: '', href: '/pages/updates' },
+        { id: 'news', title: 'News', desc: 'Official updates, announcements, and latest milestones.', icon:<Rss/>, img: '', href: '/pages/updates?tab=news' },
+        { id: 'blog', title: 'Blog', desc: 'Deep dives, insights, and stories from the EDAX team.', icon:<Rss/>, img: '', href: '/pages/updates?tab=blog' },
         
     ],
 

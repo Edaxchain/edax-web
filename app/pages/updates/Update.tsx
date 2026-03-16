@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { LoaderCircle, Newspaper, BookOpen } from 'lucide-react';
 
 
@@ -60,10 +61,25 @@ const formatDate = (rawDate: string | undefined) => {
 
 
 export default function UpdatesContent({ news = [], blogs = [] }: any) {
-    const [activeTab, setActiveTab] = useState<'news' | 'blog'>('news');
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const currentTab = (searchParams.get('tab') as 'news' | 'blog') || 'news';
+    const [activeTab, setActiveTab] = useState<'news' | 'blog'>(currentTab);
+
+    useEffect(() => {
+        const tab = searchParams.get('tab') as 'news' | 'blog';
+        if (tab && (tab === 'news' || tab === 'blog')) {
+            setActiveTab(tab);
+        }
+    }, [searchParams]);
+
+    const handleTabChange = (tab: 'news' | 'blog') => {
+        setActiveTab(tab);
+        router.replace(`/pages/updates?tab=${tab}`, { scroll: false });
+    };
+
     const newsItems = news?.items || [];
     const newsSource = news?.source || "News";
-    
     const blogItems = blogs?.items || [];
     const blogSource = blogs?.source || "Blogs";
 
@@ -91,11 +107,11 @@ export default function UpdatesContent({ news = [], blogs = [] }: any) {
         <>
             {/* Tab */}
             <div className="flex p-1.5 bg-background backdrop-blur-xl border border-border/10 rounded-full w-fit mb-12">
-                <button onClick={() => setActiveTab('news')}
+                <button onClick={() => handleTabChange('news')}
                     className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'news' ? 'bg-primary-button text-text-main shadow-lg' : 'text-text-sub'}`}>
                     <Newspaper size={16} /> News
                 </button>
-                <button onClick={() => setActiveTab('blog')}
+                <button onClick={() => handleTabChange('blog')}
                     className={`flex items-center gap-2 px-8 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all ${activeTab === 'blog' ? 'bg-primary-button text-text-main shadow-lg' : 'text-text-sub'}`}>
                     <BookOpen size={16} /> Blogs
                 </button>

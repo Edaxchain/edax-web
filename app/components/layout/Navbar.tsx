@@ -45,11 +45,11 @@ const Navbar = () => {
     const navLinks = [
         { id: 'home', label: 'Home', href: '/' },
         { id: 'products', label: 'Products', data: allProducts, category: 'Innovations', href: '/pages/products' },
-        { id: 'wallet', label: 'Wallet', data: Nav_content.wallet, category: 'Services', href: '/' },
+        { id: 'wallet', label: 'Wallet', data: Nav_content.wallet, category: 'Services', href: '/pages/wallet?tab=guide' },
         { id: 'explore', label: 'Explore', data: Nav_content.explore, href: '/pages/explore' },
         { id: 'docs', label: 'Docs/Developers', data: Nav_content.docs, category: 'Resources', href: '/' },
         { id: 'roadmap', label: 'Roadmap', href: '/pages/roadmap' },
-        { id: 'blog', label: 'Blog/News', data: Nav_content.blog, category: 'Blog/News', href: '/pages/updates' },
+        { id: 'blog', label: 'Blog/News', data: Nav_content.blog, category: 'Blog/News', href: '/pages/updates?tab=news' },
         { id: 'about', label: 'About us', data: Nav_content.about, category: 'Company', href: '/pages/about' },
         { id: 'support', label: 'Support', data: Nav_content.support, category: 'Help', href: '/pages/support' },
         { id: 'legal', label: 'Legal', data: Nav_content.legal, category: 'Policy', href: '/' },
