@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 const StatItem = ({ value, label }: { value: string; label: string }) => (
     <div className="text-center">
         <h2 className="text-8xl text-primary font-black tracking-tighter uppercase mb-4 drop-shadow-[0_0_5px_rgba(20,241,149,0.3)]">
@@ -8,11 +10,13 @@ const StatItem = ({ value, label }: { value: string; label: string }) => (
 );
 
 const Statistics = () => {
+    const t = useTranslations("HomePage");
+
     const stats = [
-        { value: "2,459", label: "Total users" },
-        { value: "20", label: "Total Partners" },
-        { value: "35.0", label: "Floor Price" },
-        { value: "2M", label: "Volume Trades" },
+        { value: "2,459", label: t("statistics.total_users") },
+        { value: "20", label: t("statistics.total_partners") },
+        { value: "35.0", label: t("statistics.floor_price") },
+        { value: "2M", label: t("statistics.volume_trades") },
     ];
 
     return (

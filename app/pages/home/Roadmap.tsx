@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import {
     motion,
@@ -6,6 +5,7 @@ import {
     useAnimationFrame,
     useMotionValue,
 } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Roadmap = () => {
     const [isPaused, setIsPaused] = useState(false);

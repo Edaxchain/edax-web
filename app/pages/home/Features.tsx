@@ -3,6 +3,7 @@ import Feature1 from "@/app/assets/features/feature 1.png";
 import Feature2 from "@/app/assets/features/feature 2.png";
 import Feature3 from "@/app/assets/features/feature 3.png";
 import Feature4 from "@/app/assets/features/feature 4.png";
+import { useTranslations } from "next-intl";
 
 const Card = ({
     title,
@@ -41,6 +42,8 @@ const Card = ({
 };
 
 const Features = () => {
+    const t = useTranslations("HomePage");
+
     const cards = [
         {
             title: "EVM (Arbitrum Orbit / Nitro)",
@@ -80,15 +83,11 @@ const Features = () => {
             </div>
             <div className="text-left px-10 md:px-20 lg:px-50">
                 <h1 className="text-5xl font-black tracking-tighter uppercase mb-4">
-                    Espresso Shared Sequencer (HotShot BFT)
+                    {t("features.title")}
                 </h1>
                 <p className="mb-6 text-lg">
-                    Sequencer ทำหน้าที่กำหนดลำดับธุรกรรม Espresso ให้บริการ
-                    sequencer แบบกลางและกระจายศูนย์แก่หลายเชน พร้อมออก
-                    confirmation certificate (ลายเซ็นรวม)
-                    เพื่อพิสูจน์ว่าจัดลำดับ batch อย่างยุติธรรมและรวดเร็ว
-                    ผู้ใช้จึงได้ fast confirmations ก่อนการชำระบัญชีจริงบน
-                    Ethereum
+                    {t("features.description")}
+                    
                 </p>
             </div>
         </section>

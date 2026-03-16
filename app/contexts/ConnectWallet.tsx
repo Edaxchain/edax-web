@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { useState, useRef, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 export const ConnectWallet = () => {
+    const t = useTranslations("Navbar");
     const { setVisible } = useWalletModal();
     const { publicKey, disconnect, connected, wallet } = useWallet();
     const [isOpen, setIsOpen] = useState(false);
@@ -34,10 +36,10 @@ export const ConnectWallet = () => {
                 className="bg-primary-button text-text-main rounded-full px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold transition-all hover: cursor-pointer hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(20,241,149,0.3)]"
             >
                 {/* บน Desktop */}
-                <span className="text-text-main hidden sm:inline">Connect Wallet</span>
+                <span className="text-black hidden sm:inline">{t("connect-wallet")}</span>
 
                 {/* บน Mobile */}
-                <span className="text-text-main sm:hidden">Connect</span>
+                <span className="text-black sm:hidden">{t("connect")}</span>
             </button>
         );
     }

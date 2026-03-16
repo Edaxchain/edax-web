@@ -3,8 +3,11 @@ import Feature1 from "@/app/assets/features/feature 1.png";
 import Feature2 from "@/app/assets/features/feature 2.png";
 import Feature3 from "@/app/assets/features/feature 3.png";
 import Feature4 from "@/app/assets/features/feature 4.png";
+import { useTranslations } from "next-intl";
 
 const Blockchain = () => {
+    const t = useTranslations("HomePage");
+
     const cards = [
         {
             title: "Smart City",
@@ -50,19 +53,17 @@ const Blockchain = () => {
     ];
 
     return (
-        <section
-            id="blockchain"
-            className="py-15 overflow-hidden"
-        >
+        <section id="blockchain" className="py-15 overflow-hidden">
             <div className="px-10 md:px-20 lg:px-40">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-4">
-                        One Blockchain{" "}
-                        <span className="text-primary">Multiple Smart Solutions</span>
+                        {t.rich("blockchain.title", {
+                            primary: (chunks) => (
+                                <span className="text-primary">{chunks}</span>
+                            ),
+                        })}
                     </h1>
-                    <p className="mb-6 text-lg">
-                        EDAX ENERGY BLOCKCHAIN
-                    </p>
+                    <p className="mb-6 text-lg">{t("blockchain.subtitle")}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-5 md:px-0 gap-15 mb-16">
@@ -77,9 +78,7 @@ const Blockchain = () => {
                     ))}
                 </div>
                 <p className="text-center mb-6 text-lg">
-                    EDAX is designed as a modular blockchain platform that
-                    supports real-world smart infrastructure and digital
-                    services through a single ecosystem.
+                    {t("blockchain.description")}
                 </p>
             </div>
         </section>
