@@ -123,7 +123,7 @@ export default function ProductsPage() {
                                                                         product.img
                                                                     }
                                                                     alt={
-                                                                        product.titleKey
+                                                                        product.title
                                                                     }
                                                                     className="w-full h-full object-cover origin-center scale-[1.20] transition-transform duration-700 group-hover:scale-[1.50]"
                                                                 />
@@ -144,12 +144,12 @@ export default function ProductsPage() {
                                                         <div className="relative z-10">
                                                             <h3 className="text-xl font-bold mb-3">
                                                                 {
-                                                                    product.titleKey
+                                                                    product.title
                                                                 }
                                                             </h3>
                                                             <p className="text-text-sub text-sm leading-relaxed mb-6 line-clamp-2">
                                                                 {
-                                                                    product.descKey
+                                                                    product.desc
                                                                 }
                                                             </p>
 

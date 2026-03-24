@@ -63,9 +63,9 @@ const Navbar = () => {
             label: t("wallet"),
             data: Nav_content.wallet,
             category: "Services",
-            href: "/",
+            href: "/pages/wallet?tab=guide",
         },
-        { id: "explorer", label: t("explorer"), href: "/" },
+        { id: "explorer", label: t("explorer"), href: "/pages/explore" },
         {
             id: "docs",
             label: t("docs"),
@@ -73,7 +73,7 @@ const Navbar = () => {
             category: "Resources",
             href: "/",
         },
-        { id: "roadmap", label: t("roadmap"), href: "/#roadmap" },
+        { id: "roadmap", label: t("roadmap"), href: "/pages/roadmap" },
         {
             id: "blog",
             label: t("blog"),
