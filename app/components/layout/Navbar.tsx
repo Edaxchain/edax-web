@@ -71,7 +71,7 @@ const Navbar = () => {
             label: t("docs"),
             data: Nav_content.docs,
             category: "Resources",
-            href: "/",
+            href: "/pages/docs",
         },
         { id: "roadmap", label: t("roadmap"), href: "/pages/roadmap" },
         {
@@ -100,7 +100,7 @@ const Navbar = () => {
             label: t("legal"),
             data: Nav_content.legal,
             category: "Policy",
-            href: "/",
+            href: "/pages/legal",
         },
     ];
 

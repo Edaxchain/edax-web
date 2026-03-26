@@ -30,15 +30,15 @@ export const Nav_content = {
     ],
 
     docs: [
-        { id: 'api', title: 'API References', desc: 'Technical documentation for seamless API integration.', icon:<ScrollText/>, img: '', href: '/' },
-        { id: 'sdk', title: 'SDK', desc: 'Powerful tools and libraries to build on top of our network.', icon:<ScrollText/>, img: '', href: '/' },
-        { id: 'tutorials', title: 'Tutorials', desc: 'Guides and resources to help you master our developer tools.', icon:<ScrollText/>, img: '', href: '/' },
+        { id: 'api', title: 'API References', desc: 'Technical documentation for seamless API integration.', icon:<ScrollText/>, img: '', href: '/pages/docs' },
+        { id: 'sdk', title: 'SDK', desc: 'Powerful tools and libraries to build on top of our network.', icon:<ScrollText/>, img: '', href: '/pages/docs' },
+        { id: 'tutorials', title: 'Tutorials', desc: 'Guides and resources to help you master our developer tools.', icon:<ScrollText/>, img: '', href: '/pages/docs' },
     ],
 
     legal: [
-        { id: 'term', title: 'Terms of Service', desc: 'The legal agreement governing your use of our services.', icon:<Scale/>, img: '', href: '/' },
-        { id: 'privacy', title: 'Privacy Policy', desc: 'How we protect your data and respect your privacy.', icon:<Scale/>, img: '', href: '/' },
-        { id: 'cookies', title: 'Cookies Policy', desc: 'Information about how we use cookies to improve your experience.', icon:<Scale/>, img: '', href: '/' },
+        { id: 'term', title: 'Terms of Service', desc: 'The legal agreement governing your use of our services.', icon:<Scale/>, img: '', href: '/pages/legal' },
+        { id: 'privacy', title: 'Privacy Policy', desc: 'How we protect your data and respect your privacy.', icon:<Scale/>, img: '', href: '/pages/legal' },
+        { id: 'cookies', title: 'Cookies Policy', desc: 'Information about how we use cookies to improve your experience.', icon:<Scale/>, img: '', href: '/pages/legal' },
     ],
 
     blog: [
