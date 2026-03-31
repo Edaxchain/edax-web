@@ -53,5 +53,5 @@
     --color-done-status: var(--done-status);
     --color-progress-status: var(--progress-status);
     --color-upcoming-status: var(--upcoming-status);
-    --font-brand: "Inter", sans-serif;
+    --font-brand: var(--font-anuphan), san-serif;
 }
